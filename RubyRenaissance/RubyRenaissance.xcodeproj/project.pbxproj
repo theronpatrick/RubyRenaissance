@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9146482516ADD40D007D0237 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482416ADD40D007D0237 /* UIKit.framework */; };
+		9146482716ADD40D007D0237 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482616ADD40D007D0237 /* Foundation.framework */; };
+		9146482916ADD40D007D0237 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482816ADD40D007D0237 /* CoreGraphics.framework */; };
+		9146482B16ADD40D007D0237 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482A16ADD40D007D0237 /* GLKit.framework */; };
+		9146482D16ADD40D007D0237 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482C16ADD40D007D0237 /* OpenGLES.framework */; };
+		9146483316ADD40D007D0237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9146483116ADD40D007D0237 /* InfoPlist.strings */; };
+		9146483516ADD40D007D0237 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146483416ADD40D007D0237 /* main.m */; };
+		9146483916ADD40D007D0237 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146483816ADD40D007D0237 /* AppDelegate.m */; };
+		9146483B16ADD40D007D0237 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9146483A16ADD40D007D0237 /* Default.png */; };
+		9146483D16ADD40D007D0237 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9146483C16ADD40D007D0237 /* Default@2x.png */; };
+		9146483F16ADD40D007D0237 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9146483E16ADD40D007D0237 /* Default-568h@2x.png */; };
+		9146484216ADD40D007D0237 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9146484016ADD40D007D0237 /* MainStoryboard.storyboard */; };
+		9146484416ADD40D007D0237 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 9146484316ADD40D007D0237 /* Shader.fsh */; };
+		9146484616ADD40D007D0237 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 9146484516ADD40D007D0237 /* Shader.vsh */; };
+		9146484916ADD40D007D0237 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146484816ADD40D007D0237 /* ViewController.m */; };
+		9146485116ADD40D007D0237 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146485016ADD40D007D0237 /* SenTestingKit.framework */; };
+		9146485216ADD40D007D0237 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482416ADD40D007D0237 /* UIKit.framework */; };
+		9146485316ADD40D007D0237 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146482616ADD40D007D0237 /* Foundation.framework */; };
+		9146485B16ADD40D007D0237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9146485916ADD40D007D0237 /* InfoPlist.strings */; };
+		9146485E16ADD40D007D0237 /* RubyRenaissanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146485D16ADD40D007D0237 /* RubyRenaissanceTests.m */; };
+		9146486916ADD58A007D0237 /* BuyAndSellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146486816ADD58A007D0237 /* BuyAndSellController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9146485416ADD40D007D0237 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9146481716ADD40D007D0237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9146481F16ADD40D007D0237;
+			remoteInfo = RubyRenaissance;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9146482016ADD40D007D0237 /* RubyRenaissance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RubyRenaissance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9146482416ADD40D007D0237 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9146482616ADD40D007D0237 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9146482816ADD40D007D0237 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9146482A16ADD40D007D0237 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9146482C16ADD40D007D0237 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9146483016ADD40D007D0237 /* RubyRenaissance-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RubyRenaissance-Info.plist"; sourceTree = "<group>"; };
+		9146483216ADD40D007D0237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9146483416ADD40D007D0237 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9146483616ADD40D007D0237 /* RubyRenaissance-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RubyRenaissance-Prefix.pch"; sourceTree = "<group>"; };
+		9146483716ADD40D007D0237 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9146483816ADD40D007D0237 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9146483A16ADD40D007D0237 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9146483C16ADD40D007D0237 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9146483E16ADD40D007D0237 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9146484116ADD40D007D0237 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9146484316ADD40D007D0237 /* Shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
+		9146484516ADD40D007D0237 /* Shader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
+		9146484716ADD40D007D0237 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9146484816ADD40D007D0237 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9146484F16ADD40D007D0237 /* RubyRenaissanceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RubyRenaissanceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9146485016ADD40D007D0237 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9146485816ADD40D007D0237 /* RubyRenaissanceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RubyRenaissanceTests-Info.plist"; sourceTree = "<group>"; };
+		9146485A16ADD40D007D0237 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9146485C16ADD40D007D0237 /* RubyRenaissanceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RubyRenaissanceTests.h; sourceTree = "<group>"; };
+		9146485D16ADD40D007D0237 /* RubyRenaissanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyRenaissanceTests.m; sourceTree = "<group>"; };
+		9146486716ADD58A007D0237 /* BuyAndSellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndSellController.h; sourceTree = "<group>"; };
+		9146486816ADD58A007D0237 /* BuyAndSellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndSellController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9146481D16ADD40D007D0237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146482516ADD40D007D0237 /* UIKit.framework in Frameworks */,
+				9146482716ADD40D007D0237 /* Foundation.framework in Frameworks */,
+				9146482916ADD40D007D0237 /* CoreGraphics.framework in Frameworks */,
+				9146482B16ADD40D007D0237 /* GLKit.framework in Frameworks */,
+				9146482D16ADD40D007D0237 /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9146484B16ADD40D007D0237 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146485116ADD40D007D0237 /* SenTestingKit.framework in Frameworks */,
+				9146485216ADD40D007D0237 /* UIKit.framework in Frameworks */,
+				9146485316ADD40D007D0237 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9146481516ADD40D007D0237 = {
+			isa = PBXGroup;
+			children = (
+				9146482E16ADD40D007D0237 /* RubyRenaissance */,
+				9146485616ADD40D007D0237 /* RubyRenaissanceTests */,
+				9146482316ADD40D007D0237 /* Frameworks */,
+				9146482116ADD40D007D0237 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9146482116ADD40D007D0237 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9146482016ADD40D007D0237 /* RubyRenaissance.app */,
+				9146484F16ADD40D007D0237 /* RubyRenaissanceTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9146482316ADD40D007D0237 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9146482416ADD40D007D0237 /* UIKit.framework */,
+				9146482616ADD40D007D0237 /* Foundation.framework */,
+				9146482816ADD40D007D0237 /* CoreGraphics.framework */,
+				9146482A16ADD40D007D0237 /* GLKit.framework */,
+				9146482C16ADD40D007D0237 /* OpenGLES.framework */,
+				9146485016ADD40D007D0237 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9146482E16ADD40D007D0237 /* RubyRenaissance */ = {
+			isa = PBXGroup;
+			children = (
+				9146483716ADD40D007D0237 /* AppDelegate.h */,
+				9146483816ADD40D007D0237 /* AppDelegate.m */,
+				9146484016ADD40D007D0237 /* MainStoryboard.storyboard */,
+				9146486716ADD58A007D0237 /* BuyAndSellController.h */,
+				9146486816ADD58A007D0237 /* BuyAndSellController.m */,
+				9146484716ADD40D007D0237 /* ViewController.h */,
+				9146484816ADD40D007D0237 /* ViewController.m */,
+				9146484316ADD40D007D0237 /* Shader.fsh */,
+				9146484516ADD40D007D0237 /* Shader.vsh */,
+				9146482F16ADD40D007D0237 /* Supporting Files */,
+			);
+			path = RubyRenaissance;
+			sourceTree = "<group>";
+		};
+		9146482F16ADD40D007D0237 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9146483016ADD40D007D0237 /* RubyRenaissance-Info.plist */,
+				9146483116ADD40D007D0237 /* InfoPlist.strings */,
+				9146483416ADD40D007D0237 /* main.m */,
+				9146483616ADD40D007D0237 /* RubyRenaissance-Prefix.pch */,
+				9146483A16ADD40D007D0237 /* Default.png */,
+				9146483C16ADD40D007D0237 /* Default@2x.png */,
+				9146483E16ADD40D007D0237 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9146485616ADD40D007D0237 /* RubyRenaissanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				9146485C16ADD40D007D0237 /* RubyRenaissanceTests.h */,
+				9146485D16ADD40D007D0237 /* RubyRenaissanceTests.m */,
+				9146485716ADD40D007D0237 /* Supporting Files */,
+			);
+			path = RubyRenaissanceTests;
+			sourceTree = "<group>";
+		};
+		9146485716ADD40D007D0237 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9146485816ADD40D007D0237 /* RubyRenaissanceTests-Info.plist */,
+				9146485916ADD40D007D0237 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9146481F16ADD40D007D0237 /* RubyRenaissance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9146486116ADD40D007D0237 /* Build configuration list for PBXNativeTarget "RubyRenaissance" */;
+			buildPhases = (
+				9146481C16ADD40D007D0237 /* Sources */,
+				9146481D16ADD40D007D0237 /* Frameworks */,
+				9146481E16ADD40D007D0237 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RubyRenaissance;
+			productName = RubyRenaissance;
+			productReference = 9146482016ADD40D007D0237 /* RubyRenaissance.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9146484E16ADD40D007D0237 /* RubyRenaissanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9146486416ADD40D007D0237 /* Build configuration list for PBXNativeTarget "RubyRenaissanceTests" */;
+			buildPhases = (
+				9146484A16ADD40D007D0237 /* Sources */,
+				9146484B16ADD40D007D0237 /* Frameworks */,
+				9146484C16ADD40D007D0237 /* Resources */,
+				9146484D16ADD40D007D0237 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9146485516ADD40D007D0237 /* PBXTargetDependency */,
+			);
+			name = RubyRenaissanceTests;
+			productName = RubyRenaissanceTests;
+			productReference = 9146484F16ADD40D007D0237 /* RubyRenaissanceTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9146481716ADD40D007D0237 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Theron Patrick";
+			};
+			buildConfigurationList = 9146481A16ADD40D007D0237 /* Build configuration list for PBXProject "RubyRenaissance" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9146481516ADD40D007D0237;
+			productRefGroup = 9146482116ADD40D007D0237 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9146481F16ADD40D007D0237 /* RubyRenaissance */,
+				9146484E16ADD40D007D0237 /* RubyRenaissanceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9146481E16ADD40D007D0237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146483316ADD40D007D0237 /* InfoPlist.strings in Resources */,
+				9146483B16ADD40D007D0237 /* Default.png in Resources */,
+				9146483D16ADD40D007D0237 /* Default@2x.png in Resources */,
+				9146483F16ADD40D007D0237 /* Default-568h@2x.png in Resources */,
+				9146484216ADD40D007D0237 /* MainStoryboard.storyboard in Resources */,
+				9146484416ADD40D007D0237 /* Shader.fsh in Resources */,
+				9146484616ADD40D007D0237 /* Shader.vsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9146484C16ADD40D007D0237 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146485B16ADD40D007D0237 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9146484D16ADD40D007D0237 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9146481C16ADD40D007D0237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146483516ADD40D007D0237 /* main.m in Sources */,
+				9146483916ADD40D007D0237 /* AppDelegate.m in Sources */,
+				9146484916ADD40D007D0237 /* ViewController.m in Sources */,
+				9146486916ADD58A007D0237 /* BuyAndSellController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9146484A16ADD40D007D0237 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9146485E16ADD40D007D0237 /* RubyRenaissanceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9146485516ADD40D007D0237 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9146481F16ADD40D007D0237 /* RubyRenaissance */;
+			targetProxy = 9146485416ADD40D007D0237 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9146483116ADD40D007D0237 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9146483216ADD40D007D0237 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9146484016ADD40D007D0237 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9146484116ADD40D007D0237 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		9146485916ADD40D007D0237 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9146485A16ADD40D007D0237 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9146485F16ADD40D007D0237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9146486016ADD40D007D0237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9146486216ADD40D007D0237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyRenaissance/RubyRenaissance-Prefix.pch";
+				INFOPLIST_FILE = "RubyRenaissance/RubyRenaissance-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9146486316ADD40D007D0237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyRenaissance/RubyRenaissance-Prefix.pch";
+				INFOPLIST_FILE = "RubyRenaissance/RubyRenaissance-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9146486516ADD40D007D0237 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RubyRenaissance.app/RubyRenaissance";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyRenaissance/RubyRenaissance-Prefix.pch";
+				INFOPLIST_FILE = "RubyRenaissanceTests/RubyRenaissanceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9146486616ADD40D007D0237 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RubyRenaissance.app/RubyRenaissance";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RubyRenaissance/RubyRenaissance-Prefix.pch";
+				INFOPLIST_FILE = "RubyRenaissanceTests/RubyRenaissanceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9146481A16ADD40D007D0237 /* Build configuration list for PBXProject "RubyRenaissance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9146485F16ADD40D007D0237 /* Debug */,
+				9146486016ADD40D007D0237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9146486116ADD40D007D0237 /* Build configuration list for PBXNativeTarget "RubyRenaissance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9146486216ADD40D007D0237 /* Debug */,
+				9146486316ADD40D007D0237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9146486416ADD40D007D0237 /* Build configuration list for PBXNativeTarget "RubyRenaissanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9146486516ADD40D007D0237 /* Debug */,
+				9146486616ADD40D007D0237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9146481716ADD40D007D0237 /* Project object */;
+}
