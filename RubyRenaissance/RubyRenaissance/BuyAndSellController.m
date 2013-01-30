@@ -7,6 +7,8 @@
 //
 
 #import "BuyAndSellController.h"
+#import "Player.h"
+#import "GameManager.h"
 
 @interface BuyAndSellController ()
 
@@ -26,8 +28,17 @@
 @synthesize buyNumberButton = _buyNumberButton;
 @synthesize sellNumberButton = _sellNumberButton;
 
+@synthesize activeGem = _activeGem;
+
 bool firstTimeButtonPressed;
 bool isBuyNumber;
+
+int _unitCost;
+
+//shared resources
+
+Player* _myPlayer;
+GameManager* _myGameManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,11 +54,40 @@ bool isBuyNumber;
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    _myPlayer = [Player sharedPlayer];
+    _myGameManager = [GameManager sharedGameManager];
+    
     firstTimeButtonPressed = true;
     isBuyNumber = true;
     
     _buyNumber = 0;
     _sellNumber = 0;
+    
+    _unitCost = 0;
+    
+    //Player* myPlayer = [Player sharedPlayer];
+    //NSLog(@"currency label should say");
+    //NSLog([NSString stringWithFormat:@"%d", [_myPlayer currency]]);
+    _currencyLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer currency]];
+    
+    _activeGem = @"none";
+    
+    
+    
+    
+    //NSLog([NSString stringWithFormat:@"%d", [myPlayer currency]]);
+    
+    //NSLog([NSString stringWithFormat:@"%d", myPlayer.currency]);
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+    //Player* myPlayer = [Player sharedPlayer];
+   
+    
+    NSLog([NSString stringWithFormat:@"%d", [_myPlayer currency]]);
+    
 }
 
 - (IBAction)stepperValueChanged:(UIStepper *)sender{
@@ -145,6 +185,12 @@ bool isBuyNumber;
     
     _numberInputLabel.text = [NSString stringWithFormat:@"%d", _buyNumber];
     [_buyNumberButton setTitle:[NSString stringWithFormat:@"%d", _buyNumber] forState:UIControlStateNormal];
+    
+    //update total buy cost
+    
+    int totalCost = _buyNumber * _unitCost;
+    
+    _buyTotalLabel.text = [NSString stringWithFormat:@"%d", totalCost];
     
 }
 
@@ -250,7 +296,41 @@ bool isBuyNumber;
 
 -(IBAction)gemTouched:(id)sender{
     
-    NSLog(@"Malachite touched");
+    NSLog(@"gemTouched hit");
+    
+    //detect which gem was touched
+    //note: gem tags start with "1" i.e. malachite is 11, pearl is 12, etc.
+    
+    UIButton* myButton = sender;
+    
+    if (myButton.tag == 11){
+        NSLog(@"Malachite touched");
+        
+        _activeGem = @"malachite";
+        _unitCost = [_myGameManager getMalachitePrice];
+        
+        _pricePerItemLabel.text = [NSString stringWithFormat:@"%d", _unitCost];
+    }
+}
+
+-(IBAction)buyButtonTapped:(id)sender{
+    
+    //calculate new total currency
+    int newCurrency = [_myPlayer currency] - (_unitCost * _buyNumber);
+    _currencyLabel.text = [NSString stringWithFormat:@"%d", newCurrency];
+    //set new currency
+    [_myPlayer setCurrency:newCurrency];
+    
+    //update inventory
+    int totalMalachites = [_myPlayer malachiteCount] + _buyNumber;
+    [_myPlayer setMalachiteCount:totalMalachites];
+    
+    
+    //close number input pane if it's open
+    if(_numberInputView.alpha > 0){
+        [self toggleNumberInputViewWithAnimate:true];
+    }
+    
 }
 
 

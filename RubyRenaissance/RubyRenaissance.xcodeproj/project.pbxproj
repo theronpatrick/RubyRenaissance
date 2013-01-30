@@ -28,6 +28,10 @@
 		9146485B16ADD40D007D0237 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9146485916ADD40D007D0237 /* InfoPlist.strings */; };
 		9146485E16ADD40D007D0237 /* RubyRenaissanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146485D16ADD40D007D0237 /* RubyRenaissanceTests.m */; };
 		9146486916ADD58A007D0237 /* BuyAndSellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9146486816ADD58A007D0237 /* BuyAndSellController.m */; };
+		91B421C416B9B085005EF5F4 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421C316B9B085005EF5F4 /* Player.m */; };
+		91B421C816B9B365005EF5F4 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421C716B9B365005EF5F4 /* MainMenuController.m */; };
+		91B421CB16B9BEBC005EF5F4 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421CA16B9BEBC005EF5F4 /* GameManager.m */; };
+		91B421CE16B9CA33005EF5F4 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421CD16B9CA33005EF5F4 /* StatusViewController.m */; };
 		91E435F916B45EE4006CA007 /* NumberInputSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E435F816B45EE4006CA007 /* NumberInputSegue.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +74,14 @@
 		9146485D16ADD40D007D0237 /* RubyRenaissanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RubyRenaissanceTests.m; sourceTree = "<group>"; };
 		9146486716ADD58A007D0237 /* BuyAndSellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyAndSellController.h; sourceTree = "<group>"; };
 		9146486816ADD58A007D0237 /* BuyAndSellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyAndSellController.m; sourceTree = "<group>"; };
+		91B421C216B9B085005EF5F4 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		91B421C316B9B085005EF5F4 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		91B421C616B9B365005EF5F4 /* MainMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuController.h; sourceTree = "<group>"; };
+		91B421C716B9B365005EF5F4 /* MainMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuController.m; sourceTree = "<group>"; };
+		91B421C916B9BEBC005EF5F4 /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		91B421CA16B9BEBC005EF5F4 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		91B421CC16B9CA33005EF5F4 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		91B421CD16B9CA33005EF5F4 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		91E435F716B45EE4006CA007 /* NumberInputSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberInputSegue.h; sourceTree = "<group>"; };
 		91E435F816B45EE4006CA007 /* NumberInputSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberInputSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,12 +150,20 @@
 				9146483716ADD40D007D0237 /* AppDelegate.h */,
 				9146483816ADD40D007D0237 /* AppDelegate.m */,
 				9146484016ADD40D007D0237 /* MainStoryboard.storyboard */,
+				91B421CC16B9CA33005EF5F4 /* StatusViewController.h */,
+				91B421CD16B9CA33005EF5F4 /* StatusViewController.m */,
 				9146486716ADD58A007D0237 /* BuyAndSellController.h */,
 				9146486816ADD58A007D0237 /* BuyAndSellController.m */,
 				9146484716ADD40D007D0237 /* ViewController.h */,
 				9146484816ADD40D007D0237 /* ViewController.m */,
 				91E435F716B45EE4006CA007 /* NumberInputSegue.h */,
 				91E435F816B45EE4006CA007 /* NumberInputSegue.m */,
+				91B421C616B9B365005EF5F4 /* MainMenuController.h */,
+				91B421C716B9B365005EF5F4 /* MainMenuController.m */,
+				91B421C216B9B085005EF5F4 /* Player.h */,
+				91B421C316B9B085005EF5F4 /* Player.m */,
+				91B421C916B9BEBC005EF5F4 /* GameManager.h */,
+				91B421CA16B9BEBC005EF5F4 /* GameManager.m */,
 				9146484316ADD40D007D0237 /* Shader.fsh */,
 				9146484516ADD40D007D0237 /* Shader.vsh */,
 				9146482F16ADD40D007D0237 /* Supporting Files */,
@@ -301,6 +321,10 @@
 				9146484916ADD40D007D0237 /* ViewController.m in Sources */,
 				9146486916ADD58A007D0237 /* BuyAndSellController.m in Sources */,
 				91E435F916B45EE4006CA007 /* NumberInputSegue.m in Sources */,
+				91B421C416B9B085005EF5F4 /* Player.m in Sources */,
+				91B421C816B9B365005EF5F4 /* MainMenuController.m in Sources */,
+				91B421CB16B9BEBC005EF5F4 /* GameManager.m in Sources */,
+				91B421CE16B9CA33005EF5F4 /* StatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
