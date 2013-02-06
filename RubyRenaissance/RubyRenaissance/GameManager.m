@@ -31,6 +31,36 @@ static GameManager *sharedGameManager = nil;
     return 10;
 }
 
+-(int)getPearlPrice{
+    
+    //for testing
+    return 17;
+}
+
+-(int)getEmeraldPrice{
+    
+    //for testing
+    return 22;
+}
+
+-(int)getSapphirePrice{
+    
+    //for testing
+    return 33;
+}
+
+-(int)getDiamondPrice{
+    
+    //for testing
+    return 44;
+}
+
+-(int)getRubyPrice{
+    
+    //for testing
+    return 56;
+}
+
 
 
 @end

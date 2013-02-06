@@ -35,7 +35,13 @@ Player* _myPlayer;
     
     //set labels
     _totalCurrencyLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer currency]];
+    
     _malachiteCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer malachiteCount]];
+    _pearlCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer pearlCount]];
+    _emeraldCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer emeraldCount]];
+    _sapphireCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer sapphireCount]];
+    _diamondCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer diamondCount]];
+    _rubyCountLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer rubyCount]];
     
 }
 

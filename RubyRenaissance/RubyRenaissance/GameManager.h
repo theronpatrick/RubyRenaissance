@@ -10,8 +10,13 @@
 
 @interface GameManager : NSObject
 
-+(id) sharedGameManager;
++ (id) sharedGameManager;
 
--(int) getMalachitePrice;
+- (int) getMalachitePrice;
+- (int) getPearlPrice;
+- (int) getEmeraldPrice;
+- (int) getSapphirePrice;
+- (int) getDiamondPrice;
+- (int) getRubyPrice;
 
 @end

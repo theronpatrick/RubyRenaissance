@@ -35,9 +35,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *diamondButton;
 @property (strong, nonatomic) IBOutlet UIButton *rubyButton;
 
-//Current City
-@property (nonatomic) int *currentCity;
-
 
 
 @property (nonatomic) int buyNumber;
@@ -58,7 +55,5 @@
 
 
 - (IBAction)gemTouched:(id) sender;
-
-- (void) initializeCurrentCityTo: (NSString*) cityName;
 
 @end
