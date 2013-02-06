@@ -57,7 +57,7 @@ NSString* destinationCity;
         destinationCity = @"Naples";
     }
     
-    [self performSegueWithIdentifier:@"segueFromMapToBuySell" sender:sender];
+    [self performSegueWithIdentifier:@"segueFromMapToBuySell" sender:self];
     
 }
 

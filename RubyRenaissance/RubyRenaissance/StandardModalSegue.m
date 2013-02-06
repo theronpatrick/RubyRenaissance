@@ -11,29 +11,36 @@
 
 @implementation StandardModalSegue
 
+
 - (void) perform
 {
     // Add your own animation code here.
     
     
-    UIViewController *sourceViewController = (UIViewController*)[self sourceViewController];
-    UIViewController *destinationController = (UIViewController*)[self destinationViewController];
+//    UIViewController *sourceViewController = (UIViewController*)[self sourceViewController];
+//    UIViewController *destinationController = (UIViewController*)[self destinationViewController];
+//    
+//    CATransition* transition = [CATransition animation];
+//    transition.duration = 2.5f;
+//    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+//    transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+//    
+//
+//    
+//    
+//    [destinationController.view.layer addAnimation:transition forKey:kCATransition];
+//    
+//    //[destinationController.view addSubview:sourceViewController.view];
+//    
+//    //move current view off screen
+//    
+//    
+//
+//
+//    
+//    [[self sourceViewController] presentViewController:[self destinationViewController] animated:NO completion:nil];
     
-    CATransition* transition = [CATransition animation];
-    transition.duration = 2.5f;
-    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    transition.type = kCATransitionPush; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
-    transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
-    
-    
-    
-    //[sourceViewController.view.layer addAnimation:transition forKey:kCATransition];
-    [destinationController.view.layer addAnimation:transition forKey:kCATransition];
-
-    //added this
-    [sourceViewController.view addSubview:destinationController.view];
-    
-    [[self sourceViewController] presentViewController:[self destinationViewController] animated:YES completion:nil];
     
     //presentViewController:animated:completion:
     
@@ -69,16 +76,100 @@
 //                    }
 //                    completion:NULL];
     
-    // fourth try
+    // fourth try -- WORKING!!!
     
-//    UIViewController *sourceViewController = (UIViewController*)[self sourceViewController];
-//        UIViewController *destinationController = (UIViewController*)[self destinationViewController];
+//    UIViewController *sourceController = self.sourceViewController;
+//    UIViewController *destinationController = self.destinationViewController;
 //    
-//    [UIView transitionFromView:sourceViewController.view
-//                        toView:destinationController.view
-//                      duration:1.0f
-//                       options:UIViewAnimationOptionTransitionFlipFromLeft
-//                    completion:nil];
+//    [sourceController.view addSubview:destinationController.view];
+//    
+//    destinationController.view.center = CGPointMake(destinationController.view.center.x, destinationController.view.center.y-600);
+//    
+//    [UIView animateWithDuration:1
+//                     animations:^{
+//                         destinationController.view.center = CGPointMake(destinationController.view.center.x, [[UIScreen mainScreen] bounds].size.height/2);
+//                     }
+//                     completion:^(BOOL finished){
+//                         [[sourceController.view.subviews lastObject] removeFromSuperview];
+//                         [sourceController presentViewController:destinationController animated:NO completion:nil];
+//                         
+//                     }
+//     ];
+    
+    // fourth.5 try, expanding from middle
+    
+    UIViewController *sourceController = self.sourceViewController;
+    UIViewController *destinationController = self.destinationViewController;
+    
+    [sourceController.view addSubview:destinationController.view];
+    
+    //destinationController.view.center = CGPointMake(destinationController.view.center.x, destinationController.view.center.y-600);
+    
+//    CGRect normalFrame = destinationController.view.frame;
+//    
+//    CGRect emptyFrame = destinationController.view.frame;
+//    emptyFrame.size.width = 0;
+//    emptyFrame.size.height = 0;
+//    
+//    destinationController.view.frame = emptyFrame;
+    
+    //TODO: Set from each city's little box and we have a winner
+    
+    [destinationController.view setTransform:CGAffineTransformMakeScale(0.1,0.1)];
+    
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [destinationController.view setTransform:CGAffineTransformIdentity];
+                     }
+                     completion:^(BOOL finished){
+                         [[sourceController.view.subviews lastObject] removeFromSuperview];
+                         [sourceController presentViewController:destinationController animated:NO completion:nil];
+                         
+                     }
+     ];
+    
+    // fifth try -- seems to work pretty good
+    
+    
+//    
+//    UIViewController *sourceViewController = (UIViewController *) self.sourceViewController;
+//    UIViewController *destinationViewController = (UIViewController *) self.destinationViewController;
+//    [sourceViewController.view addSubview:destinationViewController.view];
+//    [destinationViewController.view setFrame:sourceViewController.view.window.frame];
+//    [destinationViewController.view setTransform:CGAffineTransformMakeTranslation(0, -sourceViewController.view.frame.size.height)];
+//    [destinationViewController.view setAlpha:1.0];
+//    
+//    [UIView animateWithDuration:2.5f
+//                          delay:0.0
+//                        options:UIViewAnimationOptionTransitionFlipFromTop
+//                     animations:^{
+//                         [destinationViewController.view setTransform:CGAffineTransformMakeTranslation(0, 0)];
+//                         [destinationViewController.view setAlpha:1.0];
+//                     }
+//                     completion:^(BOOL finished){
+//                         [destinationViewController.view removeFromSuperview];
+//                         [sourceViewController presentViewController:destinationViewController animated:NO completion:nil];
+//                     }];
+
+    //sixth try, getting pretty old
+    
+//    __block UIViewController *sourceViewController = (UIViewController*)[self sourceViewController];
+//    __block UIViewController *destinationController = (UIViewController*)[self destinationViewController];
+//    
+//    CATransition* transition = [CATransition animation];
+//    transition.duration = 2.5f;
+//    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    transition.type = kCATransitionMoveIn; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
+//    transition.subtype = kCATransitionFromLeft; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
+//    
+//    [destinationController.view.layer addAnimation:transition
+//                                                                forKey:kCATransition];
+//    
+//    //[sourceViewController.navigationController pushViewController:destinationController animated:NO];
+//    
+//    [[self sourceViewController] presentViewController:[self destinationViewController] animated:NO completion:nil];
     
 }
 
