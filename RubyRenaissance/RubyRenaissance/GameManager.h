@@ -12,11 +12,23 @@
 
 + (id) sharedGameManager;
 
+
+//+ (int) malachitePrice;
+//+ (int) pearlPrice;
+//+ (int) emeraldPrice;
+//+ (int) sapphirePrice;
+//+ (int) diamondPrice;
+//+ (int) rubyPrice;
+
 - (int) getMalachitePrice;
 - (int) getPearlPrice;
 - (int) getEmeraldPrice;
 - (int) getSapphirePrice;
 - (int) getDiamondPrice;
 - (int) getRubyPrice;
+
+- (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice percentFluctuation: (float) fluctuation skewUp: (bool) skewUp;
+
+
 
 @end

@@ -895,63 +895,6 @@
     <resources>
         <image name="WorldMapDEMO.png" width="449" height="450"/>
     </resources>
-    <classes>
-        <class className="BuyAndSellController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuyAndSellController.h"/>
-            <relationships>
-                <relationship kind="action" name="buyButtonTapped:"/>
-                <relationship kind="action" name="gemTouched:"/>
-                <relationship kind="action" name="inputNumberButtonTapped:"/>
-                <relationship kind="action" name="numberButtonTapped:"/>
-                <relationship kind="action" name="sellButtonTapped:"/>
-                <relationship kind="action" name="utilityButtonTapped:"/>
-                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyNumberButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyTotalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currencyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="diamondButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="emeraldButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="malachiteButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="numberInputLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numberInputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pearlButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pricePerItemLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rubyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rubyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rubyStepper" candidateClass="UIStepper"/>
-                <relationship kind="outlet" name="sapphireButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellNumberButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellTotalLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainMenuController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuController.h"/>
-            <relationships>
-                <relationship kind="action" name="startNewGame:"/>
-                <relationship kind="outlet" name="startNewGameButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="StatusViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatusViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonTouched:"/>
-                <relationship kind="outlet" name="diamondCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emeraldCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="malachiteCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pearlCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rubyCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sapphireCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalCurrencyLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WorldMapController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorldMapController.h"/>
-            <relationships>
-                <relationship kind="action" name="mapButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -350,6 +350,9 @@ typedef enum {
     // done button
     if([buttonPressedString isEqualToString:@"Done"]){
         [self toggleNumberInputViewWithAnimate:true];
+        
+        //perform same functionality as buy button
+        [self buyButtonTapped:sender];
     }
 }
 
@@ -367,6 +370,10 @@ typedef enum {
     
     NSLog(@"Tag is");
     NSLog([NSString stringWithFormat:@"%d", tagInt]);
+    
+    //This is just for testing the price changes, take out before moving on
+    
+    //[_myGameManager calculatePriceForGem:MalachiteTag gemPrice:[_myGameManager getMalachitePrice] percentFluctuation:1.0 skewUp:true];
     
     switch (tagInt) {
             
