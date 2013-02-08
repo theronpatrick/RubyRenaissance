@@ -107,6 +107,13 @@ typedef enum {
     }
     
     
+    //for testing, simply randomize prices
+    
+    [_myGameManager randomizePrices];
+    
+    
+    //just for testing
+    //[_myPlayer setCurrency:[_myPlayer currency] + 1];
     
     NSLog(@"ViewDidLoad of BuyAndSellController hit");
     
@@ -117,7 +124,7 @@ typedef enum {
     //Player* myPlayer = [Player sharedPlayer];
    
     
-    NSLog([NSString stringWithFormat:@"%d", [_myPlayer currency]]);
+    //NSLog([NSString stringWithFormat:@"%d", [_myPlayer currency]]);
     
     NSLog(@"Current city is:");
     NSLog([NSString stringWithFormat:@"%d", _currentCity]);
@@ -368,12 +375,12 @@ typedef enum {
     UIButton* myButton = sender;
     int tagInt = myButton.tag;
     
-    NSLog(@"Tag is");
-    NSLog([NSString stringWithFormat:@"%d", tagInt]);
+    //NSLog(@"Tag is");
+    //NSLog([NSString stringWithFormat:@"%d", tagInt]);
     
     //This is just for testing the price changes, take out before moving on
     
-    //[_myGameManager calculatePriceForGem:MalachiteTag gemPrice:[_myGameManager getMalachitePrice] percentFluctuation:1.0 skewUp:true];
+    //[_myGameManager calculatePriceForGem:RubyTag gemPrice:[_myGameManager getBaseRubyPrice] fixedVariation:-10.0 variableVariation:1.0];
     
     switch (tagInt) {
             
@@ -418,6 +425,9 @@ typedef enum {
             
             _activeGem = RubyTag;
             _unitCost = [_myGameManager getRubyPrice];
+            
+            NSLog(@"Price returned from ruby touched is");
+            NSLog([NSString stringWithFormat:@"%d", [_myGameManager getRubyPrice]]);
             break;
         
         default:
@@ -557,6 +567,8 @@ typedef enum {
             
         default:
             NSLog(@"Well that ain't right");
+            return;
+            
             break;
     }
     
@@ -635,6 +647,7 @@ typedef enum {
             
         default:
             NSLog(@"Well that ain't right");
+            return;
             break;
     }
     

@@ -8,6 +8,7 @@
 
 #import "StandardModalSegue.h"
 #import "QuartzCore/QuartzCore.h"
+#import "GameManager.h"
 
 @implementation StandardModalSegue
 
@@ -103,25 +104,45 @@
     
     [sourceController.view addSubview:destinationController.view];
     
-    //destinationController.view.center = CGPointMake(destinationController.view.center.x, destinationController.view.center.y-600);
-    
-//    CGRect normalFrame = destinationController.view.frame;
-//    
-//    CGRect emptyFrame = destinationController.view.frame;
-//    emptyFrame.size.width = 0;
-//    emptyFrame.size.height = 0;
-//    
-//    destinationController.view.frame = emptyFrame;
-    
     //TODO: Set from each city's little box and we have a winner
     
+    //setup game manager object and origin from it
+    GameManager* myGameManager = [GameManager sharedGameManager];
+    
+    //make new frame for destination view
+    CGPoint newCenterPoint = [myGameManager getCityOriginForSegue];
+    
+    CGPoint originalCenter = destinationController.view.center;
+
+    
+    [destinationController.view setCenter:newCenterPoint];
+    
+
+    
+    
+    //set new values
+    
     [destinationController.view setTransform:CGAffineTransformMakeScale(0.1,0.1)];
+    
+    
+    
     
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
+                         
+                         [destinationController.view setCenter:originalCenter];
                          [destinationController.view setTransform:CGAffineTransformIdentity];
+                        
+                         
+                         //might make something go boom
+                         
+//                         NSLog(@"X in animation");
+//                         NSLog([NSString stringWithFormat:@"%f", destinationController.view.frame.origin.x]);
+//                         NSLog(@"Y in animation");
+//                         NSLog([NSString stringWithFormat:@"%f", destinationController.view.frame.origin.y]);
+                         
                      }
                      completion:^(BOOL finished){
                          [[sourceController.view.subviews lastObject] removeFromSuperview];

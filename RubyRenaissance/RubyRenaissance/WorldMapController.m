@@ -8,6 +8,7 @@
 
 #import "WorldMapController.h"
 #import "BuyAndSellController.h"
+#import "GameManager.h"
 
 @interface WorldMapController ()
 
@@ -16,6 +17,8 @@
 @implementation WorldMapController
 
 NSString* destinationCity;
+
+GameManager* myGameManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +35,8 @@ NSString* destinationCity;
 	// Do any additional setup after loading the view.
     
     destinationCity = @"";
+    
+    myGameManager = [GameManager sharedGameManager];
 }
 
 - (IBAction)mapButtonPressed:(id)sender{
@@ -56,6 +61,17 @@ NSString* destinationCity;
     if(myButton.tag == 6){
         destinationCity = @"Naples";
     }
+    
+    
+    // prepare segue
+    // set origin point
+    
+    CGPoint cityTappedOrigin = myButton.center;
+    [myGameManager setCityOriginForSegue:cityTappedOrigin];
+    
+    //NSLog(@"World map button X value is");
+    //NSLog([NSString stringWithFormat:@"%f", cityTappedOrigin.x]);
+    
     
     [self performSegueWithIdentifier:@"segueFromMapToBuySell" sender:self];
     

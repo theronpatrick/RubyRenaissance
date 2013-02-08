@@ -37,11 +37,11 @@
     Player* myPlayer = [Player sharedPlayer];
     
     //DEMO set up player currency and gems
-    [myPlayer setCurrency:1000];
+    [myPlayer setCurrency:10000];
     
     NSLog(@"startNewGameButton hit");
     
-    NSLog([NSString stringWithFormat:@"%d", myPlayer.currency]);
+    //NSLog([NSString stringWithFormat:@"%d", myPlayer.currency]);
     
     [self performSegueWithIdentifier:@"testNewGameSegue" sender:self];
     

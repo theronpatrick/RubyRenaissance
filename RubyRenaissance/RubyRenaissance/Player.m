@@ -15,10 +15,13 @@ static Player *sharedPlayer = nil;
 
 + (id)sharedPlayer {
     @synchronized(self) {
-        if (sharedPlayer == nil)
+        if (sharedPlayer == nil){
             
             //allocate space for objects
             sharedPlayer = [[self alloc] init];
+        
+        NSLog(@"New player created");
+        }
         
     }
     

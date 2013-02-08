@@ -27,7 +27,22 @@
 - (int) getDiamondPrice;
 - (int) getRubyPrice;
 
-- (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice percentFluctuation: (float) fluctuation skewUp: (bool) skewUp;
+- (int) getPriceForGem: (int) gemTag;
+
+- (int) getBaseMalachitePrice;
+- (int) getBasePearlPrice;
+- (int) getBaseEmeraldPrice;
+- (int) getBaseSapphirePrice;
+- (int) getBaseDiamondPrice;
+- (int) getBaseRubyPrice;
+
+- (void) setCityOriginForSegue: (CGPoint) originPoint;
+- (CGPoint) getCityOriginForSegue;
+
+- (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice fixedVariation: (float) fixedPercent variableVariation: (float) variablePercent;
+
+- (void) randomizePrices;
+
 
 
 
