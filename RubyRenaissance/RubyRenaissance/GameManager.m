@@ -28,12 +28,21 @@ static int sapphirePrice;
 static int diamondPrice;
 static int rubyPrice;
 
+static int purchasedMalachitePrice;
+static int purchasedPearlPrice;
+static int purchasedEmeraldPrice;
+static int purchasedSapphirePrice;
+static int purchasedDiamondPrice;
+static int purchasedRubyPrice;
+
 static int baseMalachitePrice;
 static int basePearlPrice;
 static int baseEmeraldPrice;
 static int baseSapphirePrice;
 static int baseDiamondPrice;
 static int baseRubyPrice;
+
+static int lastCity;
 
 static CGPoint cityOriginForSeguePoint;
 
@@ -47,6 +56,17 @@ typedef enum {
     DiamondTag = 15,
     RubyTag = 16
 } GemTag;
+
+// enums for cities
+typedef enum {
+    NoCityTag = 20,
+    MilanTag = 21,
+    VeniceTag = 22,
+    LuccaTag = 23,
+    FlorenceTag = 24,
+    RomeTag = 25,
+    NaplesTag = 26
+} CityTag;
 
 
 + (id)sharedGameManager {
@@ -88,6 +108,15 @@ typedef enum {
     sapphirePrice = baseSapphirePrice;
     diamondPrice = baseDiamondPrice;
     rubyPrice = baseRubyPrice;
+    
+    purchasedMalachitePrice = 0;
+    purchasedPearlPrice = 0;
+    purchasedEmeraldPrice = 0;
+    purchasedSapphirePrice = 0;
+    purchasedDiamondPrice = 0;
+    purchasedRubyPrice = 0;
+    
+    lastCity = NoCityTag;
     
 }
 
@@ -165,6 +194,80 @@ typedef enum {
     return 0;
             
 }
+
+- (int) getPurchasedPriceForGem:(int)gemTag{
+    
+    switch (gemTag) {
+            
+        case MalachiteTag:
+            return purchasedMalachitePrice;
+            break;
+            
+        case PearlTag:
+            return purchasedPearlPrice;
+            break;
+            
+        case EmeraldTag:
+            return purchasedEmeraldPrice;
+            break;
+            
+        case SapphireTag:
+            return purchasedSapphirePrice;
+            break;
+            
+        case DiamondTag:
+            return purchasedDiamondPrice;
+            break;
+            
+        case RubyTag:
+            return purchasedRubyPrice;
+            break;
+            
+        default:
+            NSLog(@"Tried to get purchased price for bad gem");
+            break;
+    }
+    
+    return 0;
+}
+
+- (void) setPurchasedPriceForGem:(int)gemTag withPrice:(int)purchasePrice{
+
+        
+        switch (gemTag) {
+                
+            case MalachiteTag:
+                purchasedMalachitePrice = purchasePrice;
+                break;
+                
+            case PearlTag:
+                purchasedPearlPrice = purchasePrice;
+                break;
+                
+            case EmeraldTag:
+                purchasedEmeraldPrice = purchasePrice;
+                break;
+                
+            case SapphireTag:
+                purchasedSapphirePrice = purchasePrice;
+                break;
+                
+            case DiamondTag:
+                purchasedDiamondPrice = purchasePrice;
+                break;
+                
+            case RubyTag:
+                purchasedRubyPrice = purchasePrice;
+                break;
+                
+            default:
+                NSLog(@"Tried to set purchased price for bad gem");
+                break;
+        }
+        
+     
+    
+}
     
 
 
@@ -241,6 +344,51 @@ typedef enum {
     
 }
 
+- (int) getLastCity{
+    return lastCity;
+}
+
+- (void) setLastCity: (int) newCity{
+    lastCity = newCity;
+}
+
+- (void) setBasePriceForGem:(int)gemTag newPrice: (int) newPrice{
+    
+    switch (gemTag) {
+            
+        case MalachiteTag:
+            baseMalachitePrice = newPrice;
+            break;
+            
+        case PearlTag:
+            basePearlPrice = newPrice;
+            break;
+            
+        case EmeraldTag:
+            baseEmeraldPrice = newPrice;
+            break;
+            
+        case SapphireTag:
+            baseSapphirePrice = newPrice;
+            break;
+            
+        case DiamondTag:
+            baseDiamondPrice = newPrice;
+            break;
+            
+        case RubyTag:
+            baseRubyPrice = newPrice;
+            break;
+            
+        default:
+            NSLog(@"Tried to set price for bad gem");
+            break;
+    }
+    
+    
+    
+}
+
 
 - (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice fixedVariation: (float) fixedPercent variableVariation: (float) variablePercent{
     
@@ -249,6 +397,11 @@ typedef enum {
     
     #define ARC4RANDOM_MAX      0x100000000
     double rand = ((double)arc4random() / ARC4RANDOM_MAX);
+    
+    //NSLog(@"Random number between 0 and 1 is");
+    //NSLog([NSString stringWithFormat:@"%f", rand]);
+    
+    
     
     
     //Calculate new price
@@ -283,8 +436,8 @@ typedef enum {
         case RubyTag:
             rubyPrice = newPrice;
             
-            NSLog(@"Setting price for ruby and total is: ");
-            NSLog([NSString stringWithFormat:@"%d", newPrice]);
+            //NSLog(@"Setting price for ruby and total is: ");
+            //NSLog([NSString stringWithFormat:@"%d", newPrice]);
             
             break;
             
@@ -295,20 +448,74 @@ typedef enum {
     }
     
     
-    NSLog(@"Calculate method hit");
+    //NSLog(@"Calculate method hit");
     
 }
 
 - (void) randomizePrices{
     
-    int gemPrice = 0; 
+    int gemPrice = 0;
+    
+    //variation variables set here
+    float fixedVariationFloat = 12.0;
+    float variableVariationFloat = 9.0;
     
     for(int i = MalachiteTag; i < RubyTag + 1; i++){
         
         gemPrice = [self getBasePriceForGem:i];
-        [self calculatePriceForGem:i gemPrice:gemPrice fixedVariation:10.0 variableVariation:7.0];
+        
+        //set up or down
+        float rand = arc4random_uniform(99);
+        
+        if (rand > 49 ){
+            variableVariationFloat = -variableVariationFloat;
+            //NSLog(@"Skewed down");
+        }
+        
+        [self calculatePriceForGem:i gemPrice:gemPrice fixedVariation: fixedVariationFloat variableVariation: variableVariationFloat];
         
     }
+}
+
+- (void) calculateInflation{
+    
+    int gemPrice = 0;
+    
+    for(int i = MalachiteTag; i < RubyTag + 1; i++){
+        
+        gemPrice = [self getBasePriceForGem:i];
+        
+        //set increase
+        gemPrice = gemPrice * 1.02;
+        
+        [self setBasePriceForGem:i newPrice:gemPrice];
+        
+        //special case, small numbers
+        
+        if(gemPrice < 30){
+            
+            float rand = arc4random_uniform(99);
+            
+            //NSLog(@"Random number made is:");
+            //NSLog([NSString stringWithFormat:@"%f", rand]);
+                  
+            
+            // 20% chance goes up, 10% down, 70% no change
+            if (rand > 80){
+            gemPrice = gemPrice + 1;
+            }
+            
+            if (rand < 9){
+                gemPrice = gemPrice - 1;
+            }
+            
+            
+            
+            [self setBasePriceForGem:i newPrice:gemPrice];
+        }
+        
+    }
+    
 }
 
 #pragma mark Segue Methods

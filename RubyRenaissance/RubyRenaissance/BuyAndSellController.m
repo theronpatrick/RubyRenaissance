@@ -18,7 +18,6 @@
 
 @synthesize rubyLabel = _rubyLabel;
 @synthesize numberInputLabel = _numberInputLabel;
-@synthesize rubyStepper = _rubyStepper;
 
 @synthesize numberInputView = _numberInputView;
 
@@ -31,6 +30,8 @@
 @synthesize activeGem = _activeGem;
 
 @synthesize currentCity = _currentCity;
+
+@synthesize purchasedPriceLabel = _purchasedPriceLabel;
 
 bool firstTimeButtonPressed;
 bool isBuyNumber;
@@ -102,20 +103,28 @@ typedef enum {
     _activeGem = NoGemTag;
     
     //still some confusion about when things load, but this should solve city bit
-    if(_currentCity == nil){
+    if(_currentCity == 0){
     _currentCity = NoCityTag;
+        //NSLog(@"Current city tag is nil");
     }
     
     
     //for testing, simply randomize prices
-    
-    [_myGameManager randomizePrices];
-    
+    // only occur if city changed
+    if(_currentCity != [_myGameManager getLastCity]){
+        
+        [_myGameManager randomizePrices];
+        [_myGameManager calculateInflation];
+        
+        [_myGameManager setLastCity:_currentCity];
+        
+        //NSLog(@"Changed city block");
+    }
     
     //just for testing
     //[_myPlayer setCurrency:[_myPlayer currency] + 1];
     
-    NSLog(@"ViewDidLoad of BuyAndSellController hit");
+    //NSLog(@"ViewDidLoad of BuyAndSellController hit");
     
 }
 
@@ -126,17 +135,13 @@ typedef enum {
     
     //NSLog([NSString stringWithFormat:@"%d", [_myPlayer currency]]);
     
-    NSLog(@"Current city is:");
-    NSLog([NSString stringWithFormat:@"%d", _currentCity]);
+    //NSLog(@"Current city is:");
+    //NSLog([NSString stringWithFormat:@"%d", _currentCity]);
     
     
 }
 
-- (IBAction)stepperValueChanged:(UIStepper *)sender{
-    
-    _rubyLabel.text = [NSString stringWithFormat:@"%f", _rubyStepper.value];
-    
-}
+
 
 #pragma mark Button Methods
 - (IBAction)numberButtonTapped:(id)sender{
@@ -367,7 +372,7 @@ typedef enum {
 #pragma mark Gem Buttons
 -(IBAction)gemTouched:(id)sender{
     
-    NSLog(@"gemTouched hit");
+    //NSLog(@"gemTouched hit");
     
     //detect which gem was touched
     //note: gem tags start with "1" i.e. malachite is 11, pearl is 12, etc.
@@ -427,7 +432,7 @@ typedef enum {
             _unitCost = [_myGameManager getRubyPrice];
             
             NSLog(@"Price returned from ruby touched is");
-            NSLog([NSString stringWithFormat:@"%d", [_myGameManager getRubyPrice]]);
+            //NSLog([NSString stringWithFormat:@"%d", [_myGameManager getRubyPrice]]);
             break;
         
         default:
@@ -439,6 +444,9 @@ typedef enum {
     
     
     _pricePerItemLabel.text = [NSString stringWithFormat:@"%d", _unitCost];
+    _purchasedPriceLabel.text = [NSString stringWithFormat:@"%d", [_myGameManager getPurchasedPriceForGem:_activeGem]];
+    
+    
     
     [self setMaxPrices];
 }
@@ -584,6 +592,9 @@ typedef enum {
     
     //update labels
     [self setMaxPrices];
+    
+    //set purchased price
+    [_myGameManager setPurchasedPriceForGem:_activeGem withPrice:_unitCost];
     
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BuyAndSellController : UIViewController
-@property (strong, nonatomic) IBOutlet UIStepper *rubyStepper;
+
 
 //Labels
 @property (strong, nonatomic) IBOutlet UILabel *numberInputLabel;
@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *pricePerItemLabel;
 @property (strong, nonatomic) IBOutlet UILabel *buyTotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sellTotalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *purchasedPriceLabel;
 
 //Buttons
 @property (strong, nonatomic) IBOutlet UIButton *buyNumberButton;
@@ -36,7 +37,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *rubyButton;
 
 //Current City
-@property (nonatomic) int *currentCity;
+@property (nonatomic) int currentCity;
 
 
 

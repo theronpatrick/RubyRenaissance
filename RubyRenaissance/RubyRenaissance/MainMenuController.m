@@ -39,7 +39,7 @@
     //DEMO set up player currency and gems
     [myPlayer setCurrency:10000];
     
-    NSLog(@"startNewGameButton hit");
+    //NSLog(@"startNewGameButton hit");
     
     //NSLog([NSString stringWithFormat:@"%d", myPlayer.currency]);
     

@@ -28,6 +28,8 @@
 - (int) getRubyPrice;
 
 - (int) getPriceForGem: (int) gemTag;
+- (int) getPurchasedPriceForGem: (int) gemTag;
+- (void) setPurchasedPriceForGem: (int) gemTag withPrice: (int) purchasePrice;
 
 - (int) getBaseMalachitePrice;
 - (int) getBasePearlPrice;
@@ -36,13 +38,17 @@
 - (int) getBaseDiamondPrice;
 - (int) getBaseRubyPrice;
 
+- (void) setLastCity: (int) newCity;
+- (int) getLastCity;
+
 - (void) setCityOriginForSegue: (CGPoint) originPoint;
 - (CGPoint) getCityOriginForSegue;
 
 - (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice fixedVariation: (float) fixedPercent variableVariation: (float) variablePercent;
 
-- (void) randomizePrices;
+- (void) calculateInflation;
 
+- (void) randomizePrices;
 
 
 
