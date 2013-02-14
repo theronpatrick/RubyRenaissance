@@ -36,6 +36,8 @@
 		91BB203316C1C5740008DB94 /* WorldMapDEMO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB203216C1C5740008DB94 /* WorldMapDEMO.png */; };
 		91BB203616C1CDDC0008DB94 /* StandardModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */; };
 		91BB203916C1D3650008DB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BB203816C1D3640008DB94 /* QuartzCore.framework */; };
+		91D82B5D16CD8A28004F96FE /* BlackChancery.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 91D82B5C16CD8A28004F96FE /* BlackChancery.TTF */; };
+		91D82B6016CD928D004F96FE /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D82B5F16CD928D004F96FE /* GameOverController.m */; };
 		91E435F916B45EE4006CA007 /* NumberInputSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E435F816B45EE4006CA007 /* NumberInputSegue.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,9 @@
 		91BB203416C1CDDC0008DB94 /* StandardModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardModalSegue.h; sourceTree = "<group>"; };
 		91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardModalSegue.m; sourceTree = "<group>"; };
 		91BB203816C1D3640008DB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91D82B5C16CD8A28004F96FE /* BlackChancery.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackChancery.TTF; sourceTree = "<group>"; };
+		91D82B5E16CD928D004F96FE /* GameOverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverController.h; sourceTree = "<group>"; };
+		91D82B5F16CD928D004F96FE /* GameOverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverController.m; sourceTree = "<group>"; };
 		91E435F716B45EE4006CA007 /* NumberInputSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberInputSegue.h; sourceTree = "<group>"; };
 		91E435F816B45EE4006CA007 /* NumberInputSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberInputSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +177,8 @@
 				9146484816ADD40D007D0237 /* ViewController.m */,
 				91B421C616B9B365005EF5F4 /* MainMenuController.h */,
 				91B421C716B9B365005EF5F4 /* MainMenuController.m */,
+				91D82B5E16CD928D004F96FE /* GameOverController.h */,
+				91D82B5F16CD928D004F96FE /* GameOverController.m */,
 				91B421C216B9B085005EF5F4 /* Player.h */,
 				91B421C316B9B085005EF5F4 /* Player.m */,
 				91B421C916B9BEBC005EF5F4 /* GameManager.h */,
@@ -185,6 +192,7 @@
 		9146482F16ADD40D007D0237 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91D82B5C16CD8A28004F96FE /* BlackChancery.TTF */,
 				91BB202B16C1BCE20008DB94 /* images */,
 				9146483016ADD40D007D0237 /* RubyRenaissance-Info.plist */,
 				9146483116ADD40D007D0237 /* InfoPlist.strings */,
@@ -316,6 +324,7 @@
 				9146484416ADD40D007D0237 /* Shader.fsh in Resources */,
 				9146484616ADD40D007D0237 /* Shader.vsh in Resources */,
 				91BB203316C1C5740008DB94 /* WorldMapDEMO.png in Resources */,
+				91D82B5D16CD8A28004F96FE /* BlackChancery.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +370,7 @@
 				91B421CE16B9CA33005EF5F4 /* StatusViewController.m in Sources */,
 				91BB202A16C1BC800008DB94 /* WorldMapController.m in Sources */,
 				91BB203616C1CDDC0008DB94 /* StandardModalSegue.m in Sources */,
+				91D82B6016CD928D004F96FE /* GameOverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

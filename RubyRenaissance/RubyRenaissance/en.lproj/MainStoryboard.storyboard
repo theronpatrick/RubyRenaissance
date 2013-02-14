@@ -13,10 +13,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Dt-j2-wdl">
-                                <rect key="frame" x="105" y="218" width="101" height="44"/>
+                                <rect key="frame" x="97" y="218" width="119" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="New Game">
+                                <state key="normal" title="10 Day Game">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -63,14 +63,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eLp-2E-kqS">
-                                <rect key="frame" x="20" y="32" width="117" height="21"/>
+                                <rect key="frame" x="20" y="32" width="141" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d2S-wQ-2AD">
-                                <rect key="frame" x="145" y="32" width="64" height="21"/>
+                                <rect key="frame" x="169" y="32" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -598,6 +598,20 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VhW-Ig-2Ac">
+                                        <rect key="frame" x="12" y="31" width="49" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4dh-Eu-56k" userLabel="days_remaining_label">
+                                        <rect key="frame" x="64" y="31" width="19" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.089999999999999997" colorSpace="calibratedRGB"/>
                             </view>
@@ -657,7 +671,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="YHU-AN-rbt" kind="modal" identifier="segueToWorldMap" id="aJ6-lU-AT6"/>
+                                            <action selector="mapButtonTapped:" destination="ME8-lB-GHH" eventType="touchUpInside" id="MHn-wz-MLU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -671,7 +685,7 @@
                                         <rect key="frame" x="13" y="96" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Number">
+                                        <state key="normal" title="Num">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -701,7 +715,7 @@
                                         <rect key="frame" x="13" y="16" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Number">
+                                        <state key="normal" title="Num">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -754,6 +768,7 @@
                         <outlet property="buyNumberButton" destination="qjN-P8-9yr" id="BEl-Ul-zOR"/>
                         <outlet property="buyTotalLabel" destination="FQN-QJ-ltR" id="Haw-V0-pi4"/>
                         <outlet property="currencyLabel" destination="9FH-JN-wDS" id="5bU-LB-7DY"/>
+                        <outlet property="daysRemainingLabel" destination="4dh-Eu-56k" id="fP2-lF-iZl"/>
                         <outlet property="diamondButton" destination="7Sd-zS-CcH" id="fEL-D3-VRA"/>
                         <outlet property="emeraldButton" destination="qSY-Id-rSg" id="Xnx-gY-8xM"/>
                         <outlet property="malachiteButton" destination="D25-fu-rwu" id="Tv8-8A-2ZU"/>
@@ -767,11 +782,68 @@
                         <outlet property="sellButton" destination="WLy-wJ-ji5" id="PyV-kG-6Fg"/>
                         <outlet property="sellNumberButton" destination="5oi-Nn-tcP" id="oQF-VB-7K7"/>
                         <outlet property="sellTotalLabel" destination="e9B-42-qlT" id="vZ0-QI-lkY"/>
+                        <segue destination="QeE-fm-XvU" kind="modal" identifier="GameOverSegue" id="4Tb-go-a0d"/>
+                        <segue destination="YHU-AN-rbt" kind="modal" identifier="worldMapSegue" id="W56-iv-bf4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHX-uM-r12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="-112"/>
+        </scene>
+        <!--Game Over Controller-->
+        <scene sceneID="ecZ-JY-ylQ">
+            <objects>
+                <viewController id="QeE-fm-XvU" customClass="GameOverController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="53M-dF-rdx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0RM-19-wAc">
+                                <rect key="frame" x="20" y="20" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Final Currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P1o-0n-Eol">
+                                <rect key="frame" x="20" y="90" width="171" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OA5-UP-900">
+                                <rect key="frame" x="199" y="90" width="101" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Po5-aw-7QY">
+                                <rect key="frame" x="77" y="355" width="166" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yaT-mk-qJz" kind="modal" id="AwG-Gd-sEK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="totalCurrencyLabel" destination="OA5-UP-900" id="hHr-1m-5GG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s57-XW-9qS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-368" y="541"/>
         </scene>
         <!--World Map Controller-->
         <scene sceneID="pME-bt-pjd">
@@ -890,7 +962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYQ-5H-HW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="-840"/>
+            <point key="canvasLocation" x="403" y="-773"/>
         </scene>
         <!--test_controller-->
         <scene sceneID="Qlq-00-4dn">
@@ -910,63 +982,6 @@
     <resources>
         <image name="WorldMapDEMO.png" width="449" height="450"/>
     </resources>
-    <classes>
-        <class className="BuyAndSellController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BuyAndSellController.h"/>
-            <relationships>
-                <relationship kind="action" name="buyButtonTapped:"/>
-                <relationship kind="action" name="gemTouched:"/>
-                <relationship kind="action" name="inputNumberButtonTapped:"/>
-                <relationship kind="action" name="numberButtonTapped:"/>
-                <relationship kind="action" name="sellButtonTapped:"/>
-                <relationship kind="action" name="utilityButtonTapped:"/>
-                <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyNumberButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buyTotalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currencyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="diamondButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="emeraldButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="malachiteButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="numberInputLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="numberInputView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pearlButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="pricePerItemLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="purchasedPriceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rubyButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="rubyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sapphireButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellNumberButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="sellTotalLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MainMenuController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainMenuController.h"/>
-            <relationships>
-                <relationship kind="action" name="startNewGame:"/>
-                <relationship kind="outlet" name="startNewGameButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="StatusViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatusViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonTouched:"/>
-                <relationship kind="outlet" name="diamondCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emeraldCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="malachiteCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pearlCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="rubyCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sapphireCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalCurrencyLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WorldMapController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorldMapController.h"/>
-            <relationships>
-                <relationship kind="action" name="mapButtonPressed:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

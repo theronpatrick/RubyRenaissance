@@ -8,6 +8,7 @@
 
 #import "MainMenuController.h"
 #import "Player.h"
+#import "GameManager.h"
 
 @interface MainMenuController ()
 
@@ -30,14 +31,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Set custom font
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"BlackChancery" size:20.0]];
 }
 
 - (IBAction)startNewGame:(id)sender{
     
-    Player* myPlayer = [Player sharedPlayer];
+    //reset old stuff
     
-    //DEMO set up player currency and gems
+    [Player resetPlayer];
+    [GameManager resetGame];
+    
+    
+    //get new stuff
+    Player* myPlayer = [Player sharedPlayer];
+    GameManager* myGameManager = [GameManager sharedGameManager];
+    
+    
+    
+    //DEMO set up player currency and gems and days remaining
     [myPlayer setCurrency:10000];
+    [myGameManager setDaysRemaining:10];
     
     //NSLog(@"startNewGameButton hit");
     

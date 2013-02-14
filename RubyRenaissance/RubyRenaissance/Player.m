@@ -28,4 +28,8 @@ static Player *sharedPlayer = nil;
     return sharedPlayer;
 }
 
++ (void) resetPlayer{
+    sharedPlayer = nil;
+}
+
 @end

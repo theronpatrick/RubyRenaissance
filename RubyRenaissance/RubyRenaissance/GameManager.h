@@ -31,6 +31,9 @@
 - (int) getPurchasedPriceForGem: (int) gemTag;
 - (void) setPurchasedPriceForGem: (int) gemTag withPrice: (int) purchasePrice;
 
+- (int) getDaysRemaining;
+- (void) setDaysRemaining: (int) daysLeft;
+
 - (int) getBaseMalachitePrice;
 - (int) getBasePearlPrice;
 - (int) getBaseEmeraldPrice;
@@ -49,6 +52,8 @@
 - (void) calculateInflation;
 
 - (void) randomizePrices;
+
++ (void) resetGame;
 
 
 

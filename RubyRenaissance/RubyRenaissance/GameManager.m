@@ -43,6 +43,7 @@ static int baseDiamondPrice;
 static int baseRubyPrice;
 
 static int lastCity;
+static int daysRemaining;
 
 static CGPoint cityOriginForSeguePoint;
 
@@ -117,6 +118,7 @@ typedef enum {
     purchasedRubyPrice = 0;
     
     lastCity = NoCityTag;
+    daysRemaining = 10;
     
 }
 
@@ -389,6 +391,17 @@ typedef enum {
     
 }
 
+- (int) getDaysRemaining{
+    
+    return daysRemaining;
+    
+}
+
+- (void) setDaysRemaining:(int)daysLeft{
+    
+    daysRemaining = daysLeft;
+}
+
 
 - (void) calculatePriceForGem: (int) gemType gemPrice: (int) gemPrice fixedVariation: (float) fixedPercent variableVariation: (float) variablePercent{
     
@@ -529,6 +542,10 @@ typedef enum {
 - (CGPoint) getCityOriginForSegue{
     
     return cityOriginForSeguePoint;
+}
+
++ (void) resetGame{
+    sharedGameManager = nil;
 }
 
 

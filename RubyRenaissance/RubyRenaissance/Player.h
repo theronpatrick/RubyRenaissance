@@ -22,6 +22,8 @@
 @property (nonatomic) int diamondCount;
 @property (nonatomic) int rubyCount;
 
++ (void) resetPlayer;
+
 
 
 @end

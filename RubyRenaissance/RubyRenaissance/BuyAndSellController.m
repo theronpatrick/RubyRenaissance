@@ -32,6 +32,7 @@
 @synthesize currentCity = _currentCity;
 
 @synthesize purchasedPriceLabel = _purchasedPriceLabel;
+@synthesize daysRemainingLabel = _daysRemainingLabel;
 
 bool firstTimeButtonPressed;
 bool isBuyNumber;
@@ -102,10 +103,12 @@ typedef enum {
     
     _activeGem = NoGemTag;
     
+    
+    
     //still some confusion about when things load, but this should solve city bit
     if(_currentCity == 0){
     _currentCity = NoCityTag;
-        //NSLog(@"Current city tag is nil");
+        NSLog(@"Current city tag is nil");
     }
     
     
@@ -118,8 +121,13 @@ typedef enum {
         
         [_myGameManager setLastCity:_currentCity];
         
-        //NSLog(@"Changed city block");
+        int daysRemaining = [_myGameManager getDaysRemaining];
+        [_myGameManager setDaysRemaining: daysRemaining - 1];
+        
+        NSLog(@"Changed city block");
     }
+    
+    _daysRemainingLabel.text = [NSString stringWithFormat:@"%d", [_myGameManager getDaysRemaining]];
     
     //just for testing
     //[_myPlayer setCurrency:[_myPlayer currency] + 1];
@@ -674,6 +682,18 @@ typedef enum {
     
     //update labels
     [self setMaxPrices];
+    
+}
+
+- (IBAction) mapButtonTapped:(id)sender{
+    
+    if([_myGameManager getDaysRemaining] == 0){
+        [self performSegueWithIdentifier:@"GameOverSegue" sender:self];
+    }
+    else{
+        [self performSegueWithIdentifier:@"worldMapSegue" sender:self];
+    }
+    
     
 }
 

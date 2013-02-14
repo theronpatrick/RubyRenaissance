@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *buyTotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sellTotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *purchasedPriceLabel;
+@property (strong, nonatomic) IBOutlet UILabel *daysRemainingLabel;
 
 //Buttons
 @property (strong, nonatomic) IBOutlet UIButton *buyNumberButton;
@@ -56,6 +57,8 @@
 - (IBAction)utilityButtonTapped:(id) sender; // <-- could be split up into different methods
 - (IBAction)buyButtonTapped:(id) sender;
 - (IBAction)sellButtonTapped:(id) sender;
+
+- (IBAction)mapButtonTapped:(id) sender;
 
 
 - (IBAction)gemTouched:(id) sender;
