@@ -18,6 +18,16 @@
 
 @synthesize startNewGameButton = _newGameButton;
 
+typedef enum {
+    NoCityTag = 20,
+    MilanTag = 21,
+    VeniceTag = 22,
+    LuccaTag = 23,
+    FlorenceTag = 24,
+    RomeTag = 25,
+    NaplesTag = 26
+} CityTag;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,6 +63,7 @@
     //DEMO set up player currency and gems and days remaining
     [myPlayer setCurrency:10000];
     [myGameManager setDaysRemaining:10];
+    [myGameManager setLastCity: RomeTag];
     
     //NSLog(@"startNewGameButton hit");
     

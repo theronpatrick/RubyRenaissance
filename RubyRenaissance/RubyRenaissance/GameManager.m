@@ -493,13 +493,14 @@ typedef enum {
 - (void) calculateInflation{
     
     int gemPrice = 0;
+    int inflationRate = 1.02;
     
     for(int i = MalachiteTag; i < RubyTag + 1; i++){
         
         gemPrice = [self getBasePriceForGem:i];
         
         //set increase
-        gemPrice = gemPrice * 1.02;
+        gemPrice = gemPrice * inflationRate;
         
         [self setBasePriceForGem:i newPrice:gemPrice];
         

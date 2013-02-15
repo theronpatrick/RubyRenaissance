@@ -32,6 +32,8 @@
 		91B421C816B9B365005EF5F4 /* MainMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421C716B9B365005EF5F4 /* MainMenuController.m */; };
 		91B421CB16B9BEBC005EF5F4 /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421CA16B9BEBC005EF5F4 /* GameManager.m */; };
 		91B421CE16B9CA33005EF5F4 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B421CD16B9CA33005EF5F4 /* StatusViewController.m */; };
+		91B43C6D16CE8B1C008F3D0F /* CitySpecialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B43C6C16CE8B1C008F3D0F /* CitySpecialController.m */; };
+		91B43C7016CE969C008F3D0F /* NewsEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B43C6F16CE969C008F3D0F /* NewsEventManager.m */; };
 		91BB202A16C1BC800008DB94 /* WorldMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB202916C1BC800008DB94 /* WorldMapController.m */; };
 		91BB203316C1C5740008DB94 /* WorldMapDEMO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB203216C1C5740008DB94 /* WorldMapDEMO.png */; };
 		91BB203616C1CDDC0008DB94 /* StandardModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */; };
@@ -88,6 +90,10 @@
 		91B421CA16B9BEBC005EF5F4 /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		91B421CC16B9CA33005EF5F4 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
 		91B421CD16B9CA33005EF5F4 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		91B43C6B16CE8B1C008F3D0F /* CitySpecialController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySpecialController.h; sourceTree = "<group>"; };
+		91B43C6C16CE8B1C008F3D0F /* CitySpecialController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySpecialController.m; sourceTree = "<group>"; };
+		91B43C6E16CE969C008F3D0F /* NewsEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEventManager.h; sourceTree = "<group>"; };
+		91B43C6F16CE969C008F3D0F /* NewsEventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEventManager.m; sourceTree = "<group>"; };
 		91BB202816C1BC800008DB94 /* WorldMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldMapController.h; sourceTree = "<group>"; };
 		91BB202916C1BC800008DB94 /* WorldMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMapController.m; sourceTree = "<group>"; };
 		91BB203216C1C5740008DB94 /* WorldMapDEMO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorldMapDEMO.png; sourceTree = "<group>"; };
@@ -179,10 +185,14 @@
 				91B421C716B9B365005EF5F4 /* MainMenuController.m */,
 				91D82B5E16CD928D004F96FE /* GameOverController.h */,
 				91D82B5F16CD928D004F96FE /* GameOverController.m */,
+				91B43C6B16CE8B1C008F3D0F /* CitySpecialController.h */,
+				91B43C6C16CE8B1C008F3D0F /* CitySpecialController.m */,
 				91B421C216B9B085005EF5F4 /* Player.h */,
 				91B421C316B9B085005EF5F4 /* Player.m */,
 				91B421C916B9BEBC005EF5F4 /* GameManager.h */,
 				91B421CA16B9BEBC005EF5F4 /* GameManager.m */,
+				91B43C6E16CE969C008F3D0F /* NewsEventManager.h */,
+				91B43C6F16CE969C008F3D0F /* NewsEventManager.m */,
 				91BB203716C1CDE60008DB94 /* Segues */,
 				9146482F16ADD40D007D0237 /* Supporting Files */,
 			);
@@ -371,6 +381,8 @@
 				91BB202A16C1BC800008DB94 /* WorldMapController.m in Sources */,
 				91BB203616C1CDDC0008DB94 /* StandardModalSegue.m in Sources */,
 				91D82B6016CD928D004F96FE /* GameOverController.m in Sources */,
+				91B43C6D16CE8B1C008F3D0F /* CitySpecialController.m in Sources */,
+				91B43C7016CE969C008F3D0F /* NewsEventManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

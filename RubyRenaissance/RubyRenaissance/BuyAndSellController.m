@@ -9,6 +9,8 @@
 #import "BuyAndSellController.h"
 #import "Player.h"
 #import "GameManager.h"
+#import "CitySpecialController.h"
+#import "NewsEventManager.h"
 
 @interface BuyAndSellController ()
 
@@ -46,6 +48,7 @@ int _maxSellNumber;
 
 Player* _myPlayer;
 GameManager* _myGameManager;
+NewsEventManager* _myNewsEventManager;
 
 // enums for gems
 typedef enum {
@@ -107,8 +110,8 @@ typedef enum {
     
     //still some confusion about when things load, but this should solve city bit
     if(_currentCity == 0){
-    _currentCity = NoCityTag;
-        NSLog(@"Current city tag is nil");
+    _currentCity = RomeTag;
+        NSLog(@"Current city tag is Rome to begin");
     }
     
     
@@ -116,15 +119,7 @@ typedef enum {
     // only occur if city changed
     if(_currentCity != [_myGameManager getLastCity]){
         
-        [_myGameManager randomizePrices];
-        [_myGameManager calculateInflation];
-        
-        [_myGameManager setLastCity:_currentCity];
-        
-        int daysRemaining = [_myGameManager getDaysRemaining];
-        [_myGameManager setDaysRemaining: daysRemaining - 1];
-        
-        NSLog(@"Changed city block");
+        [self cityDidChange];
     }
     
     _daysRemainingLabel.text = [NSString stringWithFormat:@"%d", [_myGameManager getDaysRemaining]];
@@ -133,6 +128,24 @@ typedef enum {
     //[_myPlayer setCurrency:[_myPlayer currency] + 1];
     
     //NSLog(@"ViewDidLoad of BuyAndSellController hit");
+    
+}
+
+- (void) cityDidChange{
+    
+    [_myGameManager randomizePrices];
+    [_myGameManager calculateInflation];
+    
+    [_myGameManager setLastCity:_currentCity];
+    
+    int daysRemaining = [_myGameManager getDaysRemaining];
+    [_myGameManager setDaysRemaining: daysRemaining - 1];
+    
+    [_myNewsEventManager determineRandomNewsEvent];
+    [_myNewsEventManager performNewsEvent];
+    
+    NSLog(@"Changed city block");
+    
     
 }
 
@@ -371,8 +384,13 @@ typedef enum {
     if([buttonPressedString isEqualToString:@"Done"]){
         [self toggleNumberInputViewWithAnimate:true];
         
-        //perform same functionality as buy button
-        [self buyButtonTapped:sender];
+        if(isBuyNumber == true){
+            //perform same functionality as buy button
+            [self buyButtonTapped:sender];
+        }
+        else{
+            [self sellButtonTapped:sender];
+        }
     }
 }
 
@@ -728,6 +746,15 @@ typedef enum {
     NSLog(@"IntializeCurrentCity block and city is:");
     NSLog(cityName);
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"segueToCitySpecial"]) {
+        
+        CitySpecialController *destinationController = segue.destinationViewController;
+        [destinationController setCurrentCity:_currentCity];
+    }
 }
 
 
