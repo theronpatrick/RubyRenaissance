@@ -13,7 +13,7 @@
 
 static NewsEventManager* sharedNewsEventManager;
 
-static int TotalNumberOfEvents = 4;
+static int TotalNumberOfEvents = 12;
 
 static int newsEventNumber;
 static NSString* newsEventText;
@@ -96,7 +96,38 @@ typedef enum {
         case 3:
             [self pearlPriceDown];
             break;
+        
+        case 4:
+            [self emeraldPriceUp];
+            break;
+        
+        case 5:
+            [self emeraldPriceDown];
+            break;
             
+        case 6:
+            [self sapphirePriceUp];
+            break;
+            
+        case 7:
+            [self sapphirePriceDown];
+            break;
+            
+        case 8:
+            [self diamondPriceUp];
+            break;
+            
+        case 9:
+            [self diamondPriceDown];
+            break;
+            
+        case 10:
+            [self rubyPriceUp];
+            break;
+            
+        case 11:
+            [self rubyPriceDown];
+            break;
         
         default:
             //no news
@@ -147,6 +178,86 @@ typedef enum {
     [myGameManager calculatePriceForGem:PearlTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
     
     newsEventText = @"Price of pearls has gone down!";
+    
+}
+
+- (void) emeraldPriceUp{
+    
+    int gemPrice = [myGameManager getPriceForGem:EmeraldTag];
+    
+    [myGameManager calculatePriceForGem:EmeraldTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    
+    newsEventText = @"Price of emeralds has gone up!";
+    
+}
+
+- (void) emeraldPriceDown{
+    
+    int gemPrice = [myGameManager getPriceForGem:EmeraldTag];
+    
+    [myGameManager calculatePriceForGem:EmeraldTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    
+    newsEventText = @"Price of emeralds has gone down!";
+    
+}
+
+- (void) sapphirePriceUp{
+    
+    int gemPrice = [myGameManager getPriceForGem:SapphireTag];
+    
+    [myGameManager calculatePriceForGem:SapphireTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    
+    newsEventText = @"Price of sapphires has gone up!";
+    
+}
+
+- (void) sapphirePriceDown{
+    
+    int gemPrice = [myGameManager getPriceForGem:SapphireTag];
+    
+    [myGameManager calculatePriceForGem:SapphireTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    
+    newsEventText = @"Price of sapphires has gone down!";
+    
+}
+
+- (void) diamondPriceUp{
+    
+    int gemPrice = [myGameManager getPriceForGem:DiamondTag];
+    
+    [myGameManager calculatePriceForGem:DiamondTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    
+    newsEventText = @"Price of diamonds has gone up!";
+    
+}
+
+- (void) diamondPriceDown{
+    
+    int gemPrice = [myGameManager getPriceForGem:DiamondTag];
+    
+    [myGameManager calculatePriceForGem:DiamondTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    
+    newsEventText = @"Price of diamonds has gone down!";
+    
+}
+
+- (void) rubyPriceUp{
+    
+    int gemPrice = [myGameManager getPriceForGem:RubyTag];
+    
+    [myGameManager calculatePriceForGem:RubyTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    
+    newsEventText = @"Price of rubies has gone up!";
+    
+}
+
+- (void) rubyPriceDown{
+    
+    int gemPrice = [myGameManager getPriceForGem:RubyTag];
+    
+    [myGameManager calculatePriceForGem:RubyTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    
+    newsEventText = @"Price of rubies has gone down!";
     
 }
 

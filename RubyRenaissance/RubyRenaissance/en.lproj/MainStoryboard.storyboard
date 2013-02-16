@@ -32,7 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="newGameButton" destination="8Dt-j2-wdl" id="I30-o9-hKx"/>
-                        <segue destination="ME8-lB-GHH" kind="modal" identifier="testNewGameSegue" id="qcT-3r-r6S"/>
+                        <segue destination="ME8-lB-GHH" kind="custom" identifier="testNewGameSegue" customClass="FadeToBlackSegue" id="qcT-3r-r6S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdz-gM-nNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -669,6 +669,13 @@
                                             <segue destination="uC5-zb-70d" kind="modal" identifier="segueToCitySpecial" modalTransitionStyle="flipHorizontal" id="PBU-BT-lUo"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O5o-lz-FD3" userLabel="city_label">
+                                        <rect key="frame" x="9" y="20" width="88" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.089999999999999997" colorSpace="calibratedRGB"/>
                             </view>
@@ -784,6 +791,7 @@
                         <outlet property="buyButton" destination="s6y-fV-6Ze" id="jFb-wQ-wOo"/>
                         <outlet property="buyNumberButton" destination="qjN-P8-9yr" id="BEl-Ul-zOR"/>
                         <outlet property="buyTotalLabel" destination="FQN-QJ-ltR" id="Haw-V0-pi4"/>
+                        <outlet property="cityLabel" destination="O5o-lz-FD3" id="R2R-bb-Yrl"/>
                         <outlet property="currencyLabel" destination="9FH-JN-wDS" id="5bU-LB-7DY"/>
                         <outlet property="daysRemainingLabel" destination="4dh-Eu-56k" id="fP2-lF-iZl"/>
                         <outlet property="diamondButton" destination="7Sd-zS-CcH" id="fEL-D3-VRA"/>
@@ -799,7 +807,7 @@
                         <outlet property="sellButton" destination="WLy-wJ-ji5" id="PyV-kG-6Fg"/>
                         <outlet property="sellNumberButton" destination="5oi-Nn-tcP" id="oQF-VB-7K7"/>
                         <outlet property="sellTotalLabel" destination="e9B-42-qlT" id="vZ0-QI-lkY"/>
-                        <segue destination="QeE-fm-XvU" kind="modal" identifier="GameOverSegue" id="4Tb-go-a0d"/>
+                        <segue destination="QeE-fm-XvU" kind="custom" identifier="GameOverSegue" customClass="FadeToBlackSegue" id="4Tb-go-a0d"/>
                         <segue destination="YHU-AN-rbt" kind="modal" identifier="worldMapSegue" id="W56-iv-bf4"/>
                     </connections>
                 </viewController>
@@ -1075,6 +1083,7 @@
                 <relationship kind="outlet" name="buyButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyNumberButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buyTotalLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="currencyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="daysRemainingLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="diamondButton" candidateClass="UIButton"/>
@@ -1141,6 +1150,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ekz-9V-FfL"/>
+        <segue reference="qcT-3r-r6S"/>
     </inferredMetricsTieBreakers>
 </document>

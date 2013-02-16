@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *sellTotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *purchasedPriceLabel;
 @property (strong, nonatomic) IBOutlet UILabel *daysRemainingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cityLabel;
 
 //Buttons
 @property (strong, nonatomic) IBOutlet UIButton *buyNumberButton;

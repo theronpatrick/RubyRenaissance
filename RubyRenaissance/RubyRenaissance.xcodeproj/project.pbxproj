@@ -38,6 +38,7 @@
 		91BB203316C1C5740008DB94 /* WorldMapDEMO.png in Resources */ = {isa = PBXBuildFile; fileRef = 91BB203216C1C5740008DB94 /* WorldMapDEMO.png */; };
 		91BB203616C1CDDC0008DB94 /* StandardModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */; };
 		91BB203916C1D3650008DB94 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BB203816C1D3640008DB94 /* QuartzCore.framework */; };
+		91C246BE16CFDF2A00E555C3 /* FadeToBlackSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91C246BD16CFDF2A00E555C3 /* FadeToBlackSegue.m */; };
 		91D82B5D16CD8A28004F96FE /* BlackChancery.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 91D82B5C16CD8A28004F96FE /* BlackChancery.TTF */; };
 		91D82B6016CD928D004F96FE /* GameOverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D82B5F16CD928D004F96FE /* GameOverController.m */; };
 		91E435F916B45EE4006CA007 /* NumberInputSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E435F816B45EE4006CA007 /* NumberInputSegue.m */; };
@@ -100,6 +101,8 @@
 		91BB203416C1CDDC0008DB94 /* StandardModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardModalSegue.h; sourceTree = "<group>"; };
 		91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardModalSegue.m; sourceTree = "<group>"; };
 		91BB203816C1D3640008DB94 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		91C246BC16CFDF2A00E555C3 /* FadeToBlackSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FadeToBlackSegue.h; sourceTree = "<group>"; };
+		91C246BD16CFDF2A00E555C3 /* FadeToBlackSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FadeToBlackSegue.m; sourceTree = "<group>"; };
 		91D82B5C16CD8A28004F96FE /* BlackChancery.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlackChancery.TTF; sourceTree = "<group>"; };
 		91D82B5E16CD928D004F96FE /* GameOverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverController.h; sourceTree = "<group>"; };
 		91D82B5F16CD928D004F96FE /* GameOverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverController.m; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 			children = (
 				91E435F716B45EE4006CA007 /* NumberInputSegue.h */,
 				91E435F816B45EE4006CA007 /* NumberInputSegue.m */,
+				91C246BC16CFDF2A00E555C3 /* FadeToBlackSegue.h */,
+				91C246BD16CFDF2A00E555C3 /* FadeToBlackSegue.m */,
 				91BB203416C1CDDC0008DB94 /* StandardModalSegue.h */,
 				91BB203516C1CDDC0008DB94 /* StandardModalSegue.m */,
 			);
@@ -383,6 +388,7 @@
 				91D82B6016CD928D004F96FE /* GameOverController.m in Sources */,
 				91B43C6D16CE8B1C008F3D0F /* CitySpecialController.m in Sources */,
 				91B43C7016CE969C008F3D0F /* NewsEventManager.m in Sources */,
+				91C246BE16CFDF2A00E555C3 /* FadeToBlackSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

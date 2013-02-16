@@ -36,6 +36,8 @@
 @synthesize purchasedPriceLabel = _purchasedPriceLabel;
 @synthesize daysRemainingLabel = _daysRemainingLabel;
 
+@synthesize cityLabel = _cityLabel;
+
 bool firstTimeButtonPressed;
 bool isBuyNumber;
 
@@ -43,6 +45,8 @@ int _unitCost;
 
 int _maxBuyNumber;
 int _maxSellNumber;
+
+NSString* currentCityString;
 
 //shared resources
 
@@ -106,14 +110,16 @@ typedef enum {
     
     _activeGem = NoGemTag;
     
-    
+  
+   
     
     //still some confusion about when things load, but this should solve city bit
     if(_currentCity == 0){
-    _currentCity = RomeTag;
+        [self initializeCurrentCityTo:@"Rome"];
         NSLog(@"Current city tag is Rome to begin");
     }
     
+      _cityLabel.text = currentCityString;
     
     //for testing, simply randomize prices
     // only occur if city changed
@@ -717,6 +723,10 @@ typedef enum {
 
 - (void) initializeCurrentCityTo: (NSString*) cityName{
     
+    currentCityString = cityName;
+    
+    
+    
     //pass in city name, set current city (probably before segue from map)
     
     if([cityName isEqualToString:@"Milan"]){
@@ -745,6 +755,8 @@ typedef enum {
 
     NSLog(@"IntializeCurrentCity block and city is:");
     NSLog(cityName);
+    
+    
     
 }
 
