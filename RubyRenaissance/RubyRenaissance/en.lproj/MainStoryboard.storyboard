@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cow-Du-sGQ" userLabel="malachite_total_label">
-                                <rect key="frame" x="121" y="107" width="23" height="21"/>
+                                <rect key="frame" x="121" y="107" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RZm-yb-dEh" userLabel="pearl_total_label">
-                                <rect key="frame" x="121" y="136" width="23" height="21"/>
+                                <rect key="frame" x="121" y="136" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -112,7 +112,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xcm-i1-JDb" userLabel="emerald_total_label">
-                                <rect key="frame" x="121" y="165" width="23" height="21"/>
+                                <rect key="frame" x="121" y="165" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -126,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qxd-XE-kNu" userLabel="sapphire_total_label">
-                                <rect key="frame" x="121" y="194" width="23" height="21"/>
+                                <rect key="frame" x="121" y="194" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -140,7 +140,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q1d-th-Wxh" userLabel="diamond_total_label">
-                                <rect key="frame" x="121" y="223" width="23" height="21"/>
+                                <rect key="frame" x="121" y="223" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -154,7 +154,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y3g-Kt-zTI" userLabel="ruby_total_label">
-                                <rect key="frame" x="121" y="252" width="23" height="21"/>
+                                <rect key="frame" x="121" y="252" width="40" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Gem Capacity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k1k-Oq-DiZ">
+                                <rect key="frame" x="20" y="61" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8kp-jM-p7B" userLabel="gem_capacity_label">
+                                <rect key="frame" x="169" y="61" width="64" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -167,6 +181,7 @@
                     <connections>
                         <outlet property="diamondCountLabel" destination="Q1d-th-Wxh" id="L5g-VT-TrK"/>
                         <outlet property="emeraldCountLabel" destination="xcm-i1-JDb" id="UFg-O0-De8"/>
+                        <outlet property="gemCapacityLabel" destination="8kp-jM-p7B" id="ZgP-iB-8dA"/>
                         <outlet property="malachiteCountLabel" destination="Cow-Du-sGQ" id="Hh4-Uo-6vp"/>
                         <outlet property="pearlCountLabel" destination="RZm-yb-dEh" id="NrE-Dz-bpc"/>
                         <outlet property="rubyCountLabel" destination="y3g-Kt-zTI" id="UZR-EX-hHn"/>
@@ -902,11 +917,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="kwo-0v-S7s" userLabel="new_window">
-                                <rect key="frame" x="20" y="65" width="280" height="167"/>
+                                <rect key="frame" x="20" y="65" width="280" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="No News" id="HBf-8m-PoK" userLabel="news_text_view">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="167"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No News" id="HBf-8m-PoK" userLabel="news_text_view">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -914,18 +929,43 @@
                                     </textView>
                                 </subviews>
                             </view>
-                            <view alpha="0.10000000149011612" contentMode="scaleToFill" id="tpJ-le-bdm" userLabel="special_window">
-                                <rect key="frame" x="20" y="240" width="280" height="167"/>
+                            <view contentMode="scaleToFill" id="tpJ-le-bdm" userLabel="special_window">
+                                <rect key="frame" x="20" y="119" width="280" height="295"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8tv-M4-VKo">
+                                        <rect key="frame" x="220" y="248" width="60" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Agree">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="agreeButtonTouched:" destination="uC5-zb-70d" eventType="touchUpInside" id="yG0-IU-HtU"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="FMn-qz-x57" userLabel="special_text">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="245"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="agreeButton" destination="8tv-M4-VKo" id="8Ra-eq-z6p"/>
                         <outlet property="backButton" destination="YYW-9S-g3v" id="L8M-yB-Rj6"/>
                         <outlet property="cityNameLabel" destination="JeQ-Ql-s0m" id="qjp-gL-AGZ"/>
                         <outlet property="newsTextView" destination="HBf-8m-PoK" id="A2V-yQ-2Aw"/>
+                        <outlet property="specialTextView" destination="FMn-qz-x57" id="xHj-iJ-hAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LoE-cK-eRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1105,10 +1145,13 @@
         <class className="CitySpecialController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CitySpecialController.h"/>
             <relationships>
+                <relationship kind="action" name="agreeButtonTouched:"/>
                 <relationship kind="action" name="backButtonTouched:"/>
+                <relationship kind="outlet" name="agreeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cityNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="newsTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="specialTextView" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="GameOverController" superclassName="UIViewController">
@@ -1130,6 +1173,7 @@
                 <relationship kind="action" name="backButtonTouched:"/>
                 <relationship kind="outlet" name="diamondCountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="emeraldCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gemCapacityLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="malachiteCountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pearlCountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="rubyCountLabel" candidateClass="UILabel"/>
@@ -1150,6 +1194,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qcT-3r-r6S"/>
+        <segue reference="ekz-9V-FfL"/>
     </inferredMetricsTieBreakers>
 </document>

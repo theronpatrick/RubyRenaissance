@@ -7,17 +7,12 @@
 //
 
 #import "GameManager.h"
+#import "Player.h"
 
 
 
 @implementation GameManager
 
-//@synthesize malachitePrice = _malachitePrice;
-//@synthesize pearlPrice = _pearlPrice;
-//@synthesize emeraldPrice = _emeraldPrice;
-//@synthesize sapphirePrice = _sapphirePrice;
-//@synthesize diamondPrice = _diamondPrice; 
-//@synthesize rubyPrice = _rubyPrice;
 
 static GameManager *sharedGameManager;
 
@@ -45,7 +40,16 @@ static int baseRubyPrice;
 static int lastCity;
 static int daysRemaining;
 
+static NSString* citySpecialText;
+static int citySpecialTag;
+static bool cityProjectSuccessful;
+static bool projectInProgress;
+static bool projectPaid;
+static int dayOfCompletion;
+
 static CGPoint cityOriginForSeguePoint;
+
+static Player* myPlayer;
 
 // enums for gems
 typedef enum {
@@ -69,6 +73,13 @@ typedef enum {
     NaplesTag = 26
 } CityTag;
 
+// enums for specials
+typedef enum {
+    RomeArtTag = 30,
+    RomeBuildingTag = 31,
+    RomeStatueTag = 32,
+} CitySpecialTag;
+
 
 + (id)sharedGameManager {
     @synchronized(self) {
@@ -79,6 +90,11 @@ typedef enum {
             sharedGameManager = [[self alloc] init];
         
         //additional setup
+            
+            myPlayer = [Player sharedPlayer];
+            
+            projectInProgress = false;
+            projectPaid = false;
         
         
         //
@@ -493,7 +509,7 @@ typedef enum {
 - (void) calculateInflation{
     
     int gemPrice = 0;
-    int inflationRate = 1.02;
+    float inflationRate = 1.02;
     
     for(int i = MalachiteTag; i < RubyTag + 1; i++){
         
@@ -549,6 +565,121 @@ typedef enum {
     sharedGameManager = nil;
 }
 
+#pragma mark City Special Methods
+
+// Rome Special
+
+- (void) determineProjectForRome{
+    
+    //project based on days left
+    //TODO: Make sure works for different durations
+    
+    //for completed projects
+    if(dayOfCompletion >= daysRemaining && projectInProgress == true){
+        [self setProjectForRomeToFinished];
+        return;
+    }
+    
+    // set based on day
+    
+    if( daysRemaining > 6){
+        [self setProjectForRomeToArt];
+        citySpecialTag = RomeArtTag;
+    }
+    else if( daysRemaining > 3 || daysRemaining < 7){
+        [self setProjectForRomeToBuilding];
+        citySpecialTag = RomeBuildingTag;
+    }
+    else{
+        [self setProjectForRomeToStatue];
+        citySpecialTag = RomeStatueTag;
+    }
+    
+    
+    
+    
+    
+}
+
+- (void) determineDefaultProject{
+    
+    citySpecialText = @"No Project Here";
+    
+}
+
+- (void) setProjectForRomeToArt{
+    
+    citySpecialText = @"A local artist, Freonardo DaItchy, has been inspired to paint a grand masterpiece.  Unfortunately, he has not been able to find patrons for his endeavor.    Would you like to help finance this project?  If it is indeed a masterpiece, you may receive a hefty sum for selling it.  If not, you stand to lose your entire investment. It will cost 2000g and will be done in 3 days.";
+    
+    if(projectInProgress == true){
+        citySpecialText = @"Freonardo DaItchy is hard at work";
+    }
+    
+    
+    
+}
+
+- (void) setProjectForRomeToBuilding{
+    
+    
+    
+}
+
+- (void) setProjectForRomeToStatue{
+    
+}
+
+- (void) financeRomeProject{
+    
+    if(citySpecialTag == RomeArtTag){
+        
+        myPlayer.currency = myPlayer.currency - 2000;
+        
+        int rand = arc4random() % 100;
+        
+        if(rand > 50){
+            cityProjectSuccessful = true;
+        }
+        else{
+            cityProjectSuccessful = false;
+        }
+        
+        dayOfCompletion = daysRemaining - 3;
+        
+        projectInProgress = true;
+        
+    }
+    
+}
+
+- (void) setProjectForRomeToFinished{
+    
+    if (cityProjectSuccessful){
+        
+        citySpecialText = @"Freonardo DaItchy's work is a masterpiece!!  A local elite family has agreed to purchase it for 4000g!";
+        
+        if(projectPaid == false){
+        myPlayer.currency = myPlayer.currency + 4000;
+        }
+        
+    }
+    else{
+        
+        citySpecialText = @"Freonardo DaItchy's work is...not quite a masterpiece.  Potential buyers look at it with disgust and refuse to pay anything for the horrid piece.  The only offer is for 250g for another artist who just wants to reuse the canvas.";
+        
+        if(projectPaid == false){
+        myPlayer.currency = myPlayer.currency + 250;
+        }
+        
+    }
+    
+    projectPaid = true;
+    
+}
+
+- (NSString*) getCitySpecialText{
+    return citySpecialText;
+}
 
 
 @end

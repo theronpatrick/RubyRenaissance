@@ -12,6 +12,7 @@
 @interface StatusViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *totalCurrencyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *gemCapacityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *malachiteCountLabel;
 @property (strong, nonatomic) IBOutlet UILabel *pearlCountLabel;
 @property (strong, nonatomic) IBOutlet UILabel *emeraldCountLabel;

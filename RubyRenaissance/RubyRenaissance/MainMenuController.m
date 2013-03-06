@@ -44,6 +44,7 @@ typedef enum {
     
     // Set custom font
     [[UILabel appearance] setFont:[UIFont fontWithName:@"BlackChancery" size:20.0]];
+    //[[UITextField appearance] setFont:[UIFont fontWithName:@"BlackChancery" size:20.0]];
 }
 
 - (IBAction)startNewGame:(id)sender{
@@ -61,7 +62,8 @@ typedef enum {
     
     
     //DEMO set up player currency and gems and days remaining
-    [myPlayer setCurrency:10000];
+    [myPlayer setCurrency:1500];
+    [myPlayer setGemCapacity:100];
     [myGameManager setDaysRemaining:10];
     [myGameManager setLastCity: RomeTag];
     

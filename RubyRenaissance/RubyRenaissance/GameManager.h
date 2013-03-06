@@ -55,6 +55,15 @@
 
 + (void) resetGame;
 
+//city special methods
+
+- (void) determineProjectForRome;
+- (void) determineDefaultProject;
+
+
+- (void) financeRomeProject;
+- (NSString*) getCitySpecialText;
+
 
 
 @end

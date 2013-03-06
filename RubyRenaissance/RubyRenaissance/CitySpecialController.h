@@ -11,12 +11,15 @@
 @interface CitySpecialController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UIButton *agreeButton;
 
 @property (strong, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (strong, nonatomic) IBOutlet UITextView *newsTextView;
+@property (strong, nonatomic) IBOutlet UITextView *specialTextView;
 
 @property (nonatomic) int currentCity;
 
 - (IBAction)backButtonTouched:(id)sender;
+- (IBAction)agreeButtonTouched:(id)sender;
 
 @end

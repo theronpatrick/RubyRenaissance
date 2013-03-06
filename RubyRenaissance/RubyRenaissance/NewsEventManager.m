@@ -20,6 +20,13 @@ static NSString* newsEventText;
 
 GameManager* myGameManager;
 
+//standard numbers
+
+float standardUpFixedVariance = 10.0;
+float standardUpVariableVariance = 4.0;
+float standardDownFixedVariance = -10.0;
+float standardDownVariableVariance = -4.0;
+
 // enums for gems
 typedef enum {
     NoGemTag = 10,
@@ -42,6 +49,8 @@ typedef enum {
             //additional setup
             
             myGameManager = [GameManager sharedGameManager];
+            
+            newsEventText = @"No news";
           
   
             
@@ -136,6 +145,8 @@ typedef enum {
             
     }
     
+    NSLog(@"News text should be:");
+    NSLog(newsEventText);
     
 }
 
@@ -145,7 +156,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:MalachiteTag];
     
-    [myGameManager calculatePriceForGem:MalachiteTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:MalachiteTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance    
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of malachites has gone up!";
     
@@ -155,7 +169,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:MalachiteTag];
     
-    [myGameManager calculatePriceForGem:MalachiteTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:MalachiteTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of malachites has gone down!";
     
@@ -165,7 +182,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:PearlTag];
     
-    [myGameManager calculatePriceForGem:PearlTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:PearlTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of pearls has gone up!";
     
@@ -175,7 +195,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:PearlTag];
     
-    [myGameManager calculatePriceForGem:PearlTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:PearlTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of pearls has gone down!";
     
@@ -185,7 +208,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:EmeraldTag];
     
-    [myGameManager calculatePriceForGem:EmeraldTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:EmeraldTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of emeralds has gone up!";
     
@@ -195,7 +221,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:EmeraldTag];
     
-    [myGameManager calculatePriceForGem:EmeraldTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:EmeraldTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of emeralds has gone down!";
     
@@ -205,7 +234,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:SapphireTag];
     
-    [myGameManager calculatePriceForGem:SapphireTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:SapphireTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of sapphires has gone up!";
     
@@ -215,7 +247,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:SapphireTag];
     
-    [myGameManager calculatePriceForGem:SapphireTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:SapphireTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of sapphires has gone down!";
     
@@ -225,7 +260,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:DiamondTag];
     
-    [myGameManager calculatePriceForGem:DiamondTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:DiamondTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of diamonds has gone up!";
     
@@ -235,7 +273,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:DiamondTag];
     
-    [myGameManager calculatePriceForGem:DiamondTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:DiamondTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of diamonds has gone down!";
     
@@ -245,7 +286,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:RubyTag];
     
-    [myGameManager calculatePriceForGem:RubyTag gemPrice:gemPrice fixedVariation:10.0 variableVariation:4.0];
+    [myGameManager calculatePriceForGem:RubyTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardUpFixedVariance
+                      variableVariation: standardUpVariableVariance];
     
     newsEventText = @"Price of rubies has gone up!";
     
@@ -255,7 +299,10 @@ typedef enum {
     
     int gemPrice = [myGameManager getPriceForGem:RubyTag];
     
-    [myGameManager calculatePriceForGem:RubyTag gemPrice:gemPrice fixedVariation:-10.0 variableVariation:-4.0];
+    [myGameManager calculatePriceForGem:RubyTag
+                               gemPrice:gemPrice
+                         fixedVariation: standardDownFixedVariance
+                      variableVariation: standardDownVariableVariance];
     
     newsEventText = @"Price of rubies has gone down!";
     

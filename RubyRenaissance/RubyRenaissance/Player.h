@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSString* name;
 @property (nonatomic) int currency;
+@property (nonatomic) int gemCapacity;
 
 @property (nonatomic) int malachiteCount;
 @property (nonatomic) int pearlCount;

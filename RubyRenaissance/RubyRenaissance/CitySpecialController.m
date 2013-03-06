@@ -18,6 +18,8 @@
 
 @synthesize cityNameLabel = _cityNameLabel;
 @synthesize newsTextView = _newsTextView;
+@synthesize specialTextView = _specialTextView;
+
 
 GameManager* _myGameManager;
 NewsEventManager* _myNewsEventManager;
@@ -53,7 +55,14 @@ typedef enum {
     
     _cityNameLabel.text = [self getCityName];
     
+    [self setCitySpecialText];
+    
     _newsTextView.text = [_myNewsEventManager getNewsEventText];
+    _newsTextView.font = [UIFont fontWithName:@"BlackChancery" size:20.0];
+    _specialTextView.font = [UIFont fontWithName:@"BlackChancery" size:17.0];
+    
+    
+    
     NSLog(@"Special city loaded");
     
     
@@ -100,9 +109,64 @@ typedef enum {
     }
 }
 
+- (void) setCitySpecialText{
+    
+    
+    
+    
+    // set right text for city
+    switch (_currentCity){
+            
+        case NoCityTag:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+        case MilanTag:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+        case VeniceTag:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+        case LuccaTag:
+          [_myGameManager determineDefaultProject];
+            break;
+            
+        case FlorenceTag:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+        case RomeTag:
+            [_myGameManager determineProjectForRome];
+            break;
+            
+        case NaplesTag:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+        default:
+            [_myGameManager determineDefaultProject];
+            break;
+            
+            
+            
+    }
+
+    
+    _specialTextView.text = [_myGameManager getCitySpecialText];
+    
+}
+
 - (IBAction)backButtonTouched:(id)sender{
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+- (IBAction)agreeButtonTouched:(id)sender{
+    
+    [_myGameManager financeRomeProject];
     
 }
 

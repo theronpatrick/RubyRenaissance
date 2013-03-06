@@ -130,10 +130,9 @@ typedef enum {
     
     _daysRemainingLabel.text = [NSString stringWithFormat:@"%d", [_myGameManager getDaysRemaining]];
     
-    //just for testing
-    //[_myPlayer setCurrency:[_myPlayer currency] + 1];
+    //default to malachite being touched
     
-    //NSLog(@"ViewDidLoad of BuyAndSellController hit");
+    [self gemTouched:_malachiteButton];
     
 }
 
@@ -164,6 +163,8 @@ typedef enum {
     
     //NSLog(@"Current city is:");
     //NSLog([NSString stringWithFormat:@"%d", _currentCity]);
+    
+    _currencyLabel.text = [NSString stringWithFormat:@"%d", [_myPlayer currency]];
     
     
 }
@@ -487,8 +488,16 @@ typedef enum {
     
     _buyNumber = [_myPlayer currency] / _unitCost;
     
-    [self updateLabelsFromBuyNumber];
+    //check against inventory numbers
     
+    int capacityLeft = [self gemCapacityAvailable];
+    
+    if( _buyNumber > capacityLeft){
+        
+        _buyNumber = capacityLeft;
+    }
+    
+    [self updateLabelsFromBuyNumber];
     //set the max number a player can buy equal to this calculation.
     //TODO: Ensure that this is accurate in all cases
     _maxBuyNumber = _buyNumber;
@@ -760,6 +769,26 @@ typedef enum {
     
 }
 
+- (int) gemCapacityAvailable{
+    
+    int capacity = [_myPlayer gemCapacity];
+    
+    int gemsHeld = [_myPlayer malachiteCount] +
+                    [_myPlayer pearlCount] +
+                    [_myPlayer emeraldCount] +
+                    [_myPlayer sapphireCount] +
+                    [_myPlayer diamondCount] +
+                    [_myPlayer rubyCount];
+    
+    NSLog(@"Number of inventory spots left is:");
+    NSLog([NSString stringWithFormat:@"%d", capacity - gemsHeld]);
+    
+    return capacity - gemsHeld;
+    
+    
+    
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"segueToCitySpecial"]) {
@@ -775,6 +804,7 @@ typedef enum {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 @end
